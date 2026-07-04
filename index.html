@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tuba Çelik | Data & AI Associate</title>
+  <meta name="description" content="Tuba Çelik, Türkçe yapay zeka modelleri eğiten ve veri pipeline'ları kuran Data & AI Associate." />
+  <meta property="og:title" content="Tuba Çelik | Data & AI Associate" />
+  <meta property="og:description" content="Türkçe LLM geliştirme, veri mühendisliği ve web tasarımı." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ═══════════════════════ NAVBAR ═══════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Ana gezinme">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">TC ✦</a>
+    <ul class="nav-links" id="nav-links-desktop">
+      <li><a href="ne-yapiyorum.html" target="_blank" rel="noopener noreferrer">Ne Yapıyorum</a></li>
+      <li><a href="projeler.html" target="_blank" rel="noopener noreferrer">Projeler</a></li>
+      <li><a href="hakkimda.html" target="_blank" rel="noopener noreferrer">Hakkımda</a></li>
+      <li><a href="yetenekler.html" target="_blank" rel="noopener noreferrer">Yetenekler</a></li>
+      <li><a href="iletisim.html" target="_blank" rel="noopener noreferrer">İletişim</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menüyü aç" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav id="mobile-menu" aria-label="Mobil gezinme" hidden>
+    <a href="ne-yapiyorum.html" target="_blank" rel="noopener noreferrer">Ne Yapıyorum</a>
+    <a href="projeler.html" target="_blank" rel="noopener noreferrer">Projeler</a>
+    <a href="hakkimda.html" target="_blank" rel="noopener noreferrer">Hakkımda</a>
+    <a href="yetenekler.html" target="_blank" rel="noopener noreferrer">Yetenekler</a>
+    <a href="iletisim.html" target="_blank" rel="noopener noreferrer">İletişim</a>
+  </nav>
+</nav>
+
+<!-- ═══════════════════════ HERO ═══════════════════════ -->
+<section id="hero" aria-label="Tanıtım">
+  <div class="deco hero-circle-1" aria-hidden="true" style="position:absolute;"></div>
+  <div class="deco hero-circle-2" aria-hidden="true" style="position:absolute;"></div>
+
+  <div class="hero-content fade-in">
+    <p class="hero-greeting">👋 Merhaba, ben Tuba.</p>
+    <h1 class="hero-title">
+      VERİDEN<br>
+      YAPAY <span>ZEKAYA.</span>
+    </h1>
+    <p class="hero-desc">
+      Mad Cat Labs'ta Data &amp; AI Associate olarak çalışıyorum. İşim ham veriyi anlamlandırmakla başlıyor, dil modelleri eğitmeye ve bu modelleri üretime, yani gerçekten işe yarar ürünlere taşımaya kadar uzanıyor. Veri mühendisliğinden fine-tuning'e, değerlendirmeden dağıtıma kadar sürecin her aşamasında yer alıyorum. Web tarafında da fikirleri canlı projelere dönüştürmeyi seviyorum. Bu yolda öğrendiklerimi <strong>@tubac3l1k</strong>'te ve Medium'da paylaşıyorum.
+    </p>
+    <div class="hero-btns">
+      <a href="#projeler" class="btn btn-primary">Projelerime bak →</a>
+      <a href="#iletisim" class="btn btn-secondary">İletişime geç</a>
+    </div>
+  </div>
+
+  <div class="hero-img-wrap fade-in">
+    <div class="hero-avatar">
+      <div class="speech-bubble" aria-label="Merhaba selamı">Merhaba! 👋</div>
+      <div class="hero-avatar-inner">
+        <img src="images/tuba-hero.png" alt="Tuba Çelik portresi, neobrutalist illüstrasyon" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ NE YAPIYORUM ═══════════════════════ -->
+<section id="ne-yapiyorum" class="section" aria-label="Hizmetler">
+  <span class="section-label">Uzmanlık Alanlarım</span>
+  <h2>NE YAPIYORUM</h2>
+
+  <div class="cards-grid" role="list">
+
+    <article class="card service-card fade-in" role="listitem">
+      <div class="icon-box" style="background:var(--teal);" aria-hidden="true">📊</div>
+      <h3>Veri</h3>
+      <p class="card-desc">
+        Karmaşık veriyi anlaşılır içgörüye dönüştürüyorum. Python ve Pandas ile veri temizleme,
+        kalite kontrolleri ve keşifsel analiz yapıyor; Looker Studio, Power BI ve GA4 ile
+        karar verdiren dashboard'lar kuruyorum.
+      </p>
+      <a href="#projeler" class="card-link">Detaylar →</a>
+    </article>
+
+    <article class="card service-card fade-in" role="listitem">
+      <div class="icon-box" style="background:var(--pembe);" aria-hidden="true">🤖</div>
+      <h3>Yapay Zeka</h3>
+      <p class="card-desc">
+        Türkçe dil modelleri eğitiyorum. 200.000+ satırlık eğitim setleri, Qwen, Gemma ve
+        farklı model aileleriyle fine-tuning (LoRA/DPO), değerlendirme pipeline'ları ve
+        on-prem dağıtım. Uçtan uca LLM geliştirme.
+      </p>
+      <a href="https://medium.com/@tubaacelikk11" class="card-link" target="_blank" rel="noopener noreferrer">Yazılarımı oku →</a>
+    </article>
+
+    <article class="card service-card fade-in" role="listitem">
+      <div class="icon-box" style="background:var(--peri);" aria-hidden="true">🖥️</div>
+      <h3>Web Tasarım &amp; Geliştirme</h3>
+      <p class="card-desc">
+        Modern, kişiselleştirilmiş web siteleri tasarlıyor ve hayata geçiriyorum.
+        Temiz tasarım dili, responsive yapı ve markaya özgü bir his.
+        HTML, CSS ve JavaScript ile fikirden canlı siteye kadar.
+      </p>
+      <a href="#projeler" class="card-link">Projelerime bak →</a>
+    </article>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ PROJELER ═══════════════════════ -->
+<div id="projeler" class="projeler-wrap">
+  <span class="section-label">Portföy</span>
+  <h2>SEÇİLMİŞ ÇALIŞMALAR</h2>
+
+  <div class="proje-list" role="list">
+
+    <article class="proje-item fade-in" role="listitem">
+      <div class="proje-gorsel">
+        <img src="images/proje-mmx.png" alt="MMX Türkçe Pazarlama LLM projesi illüstrasyonu" />
+      </div>
+      <div class="proje-metin">
+        <div class="proje-tags">
+          <span class="tag tag-pembe">LLM</span>
+          <span class="tag tag-teal">Fine-tuning</span>
+          <span class="tag tag-peri">Veri Mühendisliği</span>
+          <span class="tag tag-gray">Şirket içi proje</span>
+        </div>
+        <h3 class="proje-title">MMX: Türkçe Pazarlama LLM'i</h3>
+        <p class="proje-desc">
+          Türkçe dijital pazarlama için uçtan uca dil modeli geliştirme.
+          12 alanı kapsayan 200.000+ satırlık sentetik eğitim seti kurdum,
+          JSONL pipeline'ı tasarladım ve yüzde 94 format uyumu sağlayan
+          otomatik kalite doğrulaması ekledim.
+        </p>
+        <div class="proje-links">
+          <a href="https://medium.com/@tubaacelikk11" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Medium'da Oku →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="proje-item reverse fade-in" role="listitem">
+      <div class="proje-gorsel">
+        <img src="images/proje-qwen.png" alt="Qwen fine-tuning karşılaştırması illüstrasyonu" />
+      </div>
+      <div class="proje-metin">
+        <div class="proje-tags">
+          <span class="tag tag-sari">LoRA</span>
+          <span class="tag tag-mor">DPO</span>
+          <span class="tag tag-teal">Benchmark</span>
+          <span class="tag tag-gray">Şirket içi proje</span>
+        </div>
+        <h3 class="proje-title">Qwen Çok-Model Fine-tuning Deneyi</h3>
+        <p class="proje-desc">
+          2B'den 27B'ye dört Qwen varyantını LoRA ve DPO ile karşılaştırdım.
+          27B'deki token açığını teşhis ederek üretim katmanı kararını şekillendirdim.
+          Bulguları yazıya döktüm: 2.000+ görüntülenme.
+        </p>
+        <div class="proje-links">
+          <a href="https://medium.com/@tubaacelikk11" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Medium'da Oku →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="proje-item fade-in" role="listitem">
+      <div class="proje-gorsel">
+        <img src="images/proje-skorlama.png" alt="Model skorlama sistemi illüstrasyonu" />
+      </div>
+      <div class="proje-metin">
+        <div class="proje-tags">
+          <span class="tag tag-peri">LLMOps</span>
+          <span class="tag tag-pembe">Evaluation</span>
+          <span class="tag tag-gray">Şirket içi proje</span>
+        </div>
+        <h3 class="proje-title">LLM Değerlendirme Pipeline Yeniden Tasarımı</h3>
+        <p class="proje-desc">
+          Skorlama pipeline'ını denetleyip ölçülen performansı yaklaşık 15 puan
+          baskılayan 12 artı metrik tutarsızlığını tespit ettim ve 200 artı soruda
+          standart metriklerle yeniden tasarladım.
+        </p>
+        <div class="proje-links">
+          <span class="tag tag-gray" style="padding:8px 16px;font-size:13px;">Şirket içi proje</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="proje-item reverse fade-in" role="listitem">
+      <div class="proje-gorsel">
+        <img src="images/proje-kredikarti.png" alt="Kredi kartı risk analizi illüstrasyonu" />
+      </div>
+      <div class="proje-metin">
+        <div class="proje-tags">
+          <span class="tag tag-sari">Python</span>
+          <span class="tag tag-teal">Pandas</span>
+          <span class="tag tag-pembe">Veri Analizi</span>
+        </div>
+        <h3 class="proje-title">Kredi Kartı Geç Ödeme Risk Analizi</h3>
+        <p class="proje-desc">
+          Müşteri düzeyinde finansal veriyle uçtan uca risk analizi: veri temizleme,
+          eksik değer kontrolleri, keşifsel analiz ve kural tabanlı risk skorlama.
+          Kaggle ve GitHub'da paylaşıldı.
+        </p>
+        <div class="proje-links">
+          <a href="https://github.com/tubaacelik" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub →</a>
+          <a href="https://www.kaggle.com/tubacelikk1" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Kaggle →</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="proje-item fade-in" role="listitem">
+      <div class="proje-gorsel">
+        <img src="images/proje-onprem.png" alt="On-prem LLM platformu illüstrasyonu" />
+      </div>
+      <div class="proje-metin">
+        <div class="proje-tags">
+          <span class="tag tag-teal">Ollama</span>
+          <span class="tag tag-peri">Open WebUI</span>
+          <span class="tag tag-mor">DGX Spark</span>
+          <span class="tag tag-gray">Şirket içi proje</span>
+        </div>
+        <h3 class="proje-title">On-prem LLM Platformu</h3>
+        <p class="proje-desc">
+          Gemma ve Qwen ile güvenli, şirket içi bir LLM platformu kurulumuna katıldım.
+          Ollama ve Open WebUI üzerinde model serving, DGX Spark altyapısında
+          dağıtım deneyimi.
+        </p>
+        <div class="proje-links">
+          <span class="tag tag-gray" style="padding:8px 16px;font-size:13px;">Şirket içi proje</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="proje-item reverse fade-in" role="listitem">
+      <div class="proje-gorsel">
+        <img src="images/proje-riskskor.png" alt="Manuel kredi kartı risk skorlama aracı illüstrasyonu" />
+      </div>
+      <div class="proje-metin">
+        <div class="proje-tags">
+          <span class="tag tag-sari">Python</span>
+          <span class="tag tag-teal">Streamlit</span>
+          <span class="tag tag-pembe">Risk Skorlama</span>
+        </div>
+        <h3 class="proje-title">Manuel Kredi Kartı Risk Skorlama Aracı</h3>
+        <p class="proje-desc">
+          Kredi kartı geç ödeme riskini kural tabanlı mantıkla hesaplayan interaktif araç.
+          Kullanıcı girdilerine göre anlık risk skoru ve kategori üretiyor.
+          Kaggle ve GitHub'da yayınlandı.
+        </p>
+        <div class="proje-links">
+          <a href="https://github.com/tubaacelik" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub →</a>
+          <a href="https://www.kaggle.com/tubacelikk1" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Kaggle →</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════ HAKKIMDA ═══════════════════════ -->
+<section id="hakkimda" aria-label="Hakkımda">
+  <div class="hakkimda-inner">
+    <div class="fade-in">
+      <span class="section-label" style="background:var(--sari);color:var(--siyah);">Benim Hakkımda</span>
+      <h2>HAKKIMDA</h2>
+      <div style="display:flex;flex-direction:column;gap:16px;margin-top:20px;">
+        <p>
+          Mad Cat Labs'ta Türkçe LLM geliştirme üzerine çalışıyorum. MMX projesinde 200.000+ satırlık,
+          sentetik ve gerçek veriden oluşan bir eğitim seti kurduk, Qwen ve Gemma gibi farklı model
+          aileleriyle LoRA ve DPO fine-tuning deneyleri yürüttük, değerlendirme pipeline'larını
+          tasarladık ve on-prem dağıtıma katıldık.
+        </p>
+        <p>
+          Uzun yıllar dijital analitikte ve performans pazarlamasında çalıştım. O dönemde verinin
+          nasıl okunduğunu, dönüştürüldüğünü ve karara çevrildiğini öğrendim. Şimdi bu altyapıyı
+          yapay zeka tarafına taşıyorum: n8n ile otomasyon kuruyor, model çıktılarını değerlendiriyor
+          ve geliştirme süreçlerini kolaylaştıracak araçlar inşa ediyorum.
+        </p>
+        <p>
+          Öğrendiklerimi paylaşmayı seviyorum. Instagram'da (@tubac3l1k) gündelik içerik,
+          Medium'da daha uzun teknik yazılar paylaşıyorum. İki kanal da Türkçe, çünkü yapay zekada
+          Türkçe kaynak açığı çok büyük ve bunu kapatmaya katkıda bulunmak istiyorum.
+        </p>
+      </div>
+    </div>
+    <div class="fade-in" style="display:flex;justify-content:center;">
+      <div class="hakkimda-img">
+        <img src="images/tuba-hero.png" alt="Tuba Çelik portresi, neobrutalist illüstrasyon" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ İÇERİK ÜRETİYORUM ═══════════════════════ -->
+<section id="icerik" aria-label="İçerik Üreticiliği">
+  <div class="icerik-inner">
+    <span class="section-label">Sosyal Medya</span>
+    <h2>İÇERİK ÜRETİYORUM</h2>
+    <p style="margin-top:16px;max-width:600px;color:#3a3530;">
+      Türkçe yapay zeka ve teknoloji içerikleri üretiyorum. Karmaşık konuları sade,
+      erişilebilir bir dile çeviriyorum.
+    </p>
+
+    <div class="icerik-grid" role="list">
+
+      <div class="icerik-card pembe fade-in" role="listitem" aria-label="Instagram hesabı">
+        <div class="arrow" aria-hidden="true">📸</div>
+        <h3>@tubac3l1k</h3>
+        <p>Yapay zeka ve teknoloji içerikleri. Gündelik Türkçe paylaşımlar.</p>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </div>
+
+      <a href="https://medium.com/@tubaacelikk11" class="icerik-card peri fade-in" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Medium blogu">
+        <div class="arrow" aria-hidden="true">✍️</div>
+        <h3>Medium Blog</h3>
+        <p>LLM geliştirme, fine-tuning ve veri mühendisliği üzerine teknik yazılar.</p>
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ YETENEKLER ═══════════════════════ -->
+<section id="yetenekler" aria-label="Yetenekler">
+  <div class="yetenekler-inner">
+    <span class="section-label">Araç Kutusu</span>
+    <h2>YETENEKLER</h2>
+
+    <div class="skill-categories fade-in">
+
+      <div class="skill-category">
+        <div class="skill-cat-title">🤖 Yapay Zeka ve LLM</div>
+        <div class="skill-cloud">
+          <span class="skill-pill p">Hugging Face</span>
+          <span class="skill-pill p">Unsloth</span>
+          <span class="skill-pill p">LoRA</span>
+          <span class="skill-pill p">QLoRA</span>
+          <span class="skill-pill p">DPO</span>
+          <span class="skill-pill p">PEFT</span>
+          <span class="skill-pill p">Fine-tuning</span>
+          <span class="skill-pill p">Ollama</span>
+          <span class="skill-pill p">Open WebUI</span>
+          <span class="skill-pill p">F1 / BLEU / Perplexity</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-cat-title">📊 Veri ve Analitik</div>
+        <div class="skill-cloud">
+          <span class="skill-pill t">Python</span>
+          <span class="skill-pill t">Pandas</span>
+          <span class="skill-pill t">JSONL</span>
+          <span class="skill-pill t">Sentetik Veri</span>
+          <span class="skill-pill t">SQL</span>
+          <span class="skill-pill t">GA4</span>
+          <span class="skill-pill t">Looker Studio</span>
+          <span class="skill-pill t">Power BI</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-cat-title">🛠️ Altyapı ve Otomasyon</div>
+        <div class="skill-cloud">
+          <span class="skill-pill b">Docker</span>
+          <span class="skill-pill b">Linux</span>
+          <span class="skill-pill b">n8n</span>
+          <span class="skill-pill b">Claude Code</span>
+          <span class="skill-pill b">Cursor</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <div class="skill-cat-title">🎨 Tasarım ve Web</div>
+        <div class="skill-cloud">
+          <span class="skill-pill m">HTML</span>
+          <span class="skill-pill m">CSS</span>
+          <span class="skill-pill m">JavaScript</span>
+          <span class="skill-pill m">Neobrutalism</span>
+          <span class="skill-pill m">Responsive Tasarım</span>
+          <span class="skill-pill m">Figma</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ DENEYİM & EĞİTİM ═══════════════════════ -->
+<section id="deneyim" aria-label="Deneyim ve Eğitim">
+  <div class="deneyim-inner">
+
+    <div class="fade-in">
+      <span class="section-label">Kariyer</span>
+      <h2>DENEYİM</h2>
+      <div class="timeline" role="list">
+
+        <div class="timeline-item" role="listitem">
+          <div class="timeline-title">Data & AI Associate</div>
+          <div class="timeline-company">Mad Cat Labs</div>
+          <div class="timeline-date">Şubat 2026 — Günümüz</div>
+          <div class="timeline-desc">
+            Türkçe LLM (MMX) geliştirme: sentetik veri mühendisliği, fine-tuning deneyleri
+            (LoRA/DPO), değerlendirme pipeline tasarımı, on-prem dağıtım, n8n otomasyonları.
+          </div>
+        </div>
+
+        <div class="timeline-item dim" role="listitem">
+          <div class="timeline-title">Senior Web Analytics and Marketing Specialist</div>
+          <div class="timeline-company">Link Dijital</div>
+          <div class="timeline-date">2022 — 2026</div>
+          <div class="timeline-desc">
+            4 yıl dijital analitik ve performans pazarlaması.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="fade-in">
+      <span class="section-label">Eğitim ve Sertifikalar</span>
+      <h2 style="font-size:clamp(24px,3vw,36px);">EĞİTİM &amp; SERTİFİKALAR</h2>
+
+      <div class="cert-list" role="list">
+
+        <div class="cert-item" role="listitem">
+          <span class="cert-icon" aria-hidden="true">🎓</span>
+          <div>
+            <div class="cert-name">İşletme Lisans</div>
+            <div class="cert-issuer">Beykoz Üniversitesi · 2017 — 2022</div>
+          </div>
+        </div>
+
+        <div class="cert-item" role="listitem">
+          <span class="cert-icon" aria-hidden="true">📜</span>
+          <div>
+            <div class="cert-name">Advanced Fine-Tuning for LLMs</div>
+            <div class="cert-issuer">edX</div>
+          </div>
+        </div>
+
+        <div class="cert-item" role="listitem">
+          <span class="cert-icon" aria-hidden="true">📜</span>
+          <div>
+            <div class="cert-name">Machine Learning A-Z: AI, Python and R</div>
+            <div class="cert-issuer">Udemy</div>
+          </div>
+        </div>
+
+        <div class="cert-item" role="listitem">
+          <span class="cert-icon" aria-hidden="true">📜</span>
+          <div>
+            <div class="cert-name">Deep Learning and NLP A-Z</div>
+            <div class="cert-issuer">Udemy</div>
+          </div>
+        </div>
+
+        <div class="cert-item" role="listitem">
+          <span class="cert-icon" aria-hidden="true">📜</span>
+          <div>
+            <div class="cert-name">Google Analytics 360</div>
+            <div class="cert-issuer">Google</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════ İLETİŞİM ═══════════════════════ -->
+<section id="iletisim" aria-label="İletişim formu">
+  <div class="iletisim-inner fade-in">
+    <span class="section-label" style="background:var(--sari);color:var(--siyah);">İletişim</span>
+    <h2>BİRLİKTE ÇALIŞALIM</h2>
+    <p class="sub">
+      Bir projen mi var, ya da sadece merhaba mı demek istiyorsun?
+      Yazmaktan çekinme.
+    </p>
+
+    <form class="contact-form" action="https://formspree.io/f/tubacelikk11@gmail.com" method="POST" aria-label="İletişim formu">
+      <input type="text" name="name" placeholder="Adın" required aria-label="Adın" />
+      <input type="email" name="email" placeholder="E-posta adresin" required aria-label="E-posta adresin" />
+      <textarea name="message" placeholder="Mesajın..." required aria-label="Mesajın"></textarea>
+      <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Gönder →</button>
+    </form>
+
+    <div class="or-divider" aria-hidden="true">ya da</div>
+
+    <a href="mailto:tubacelikk11@gmail.com" class="email-link" aria-label="E-posta gönder">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      tubacelikk11@gmail.com
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Tuba <span>Çelik</span></div>
+      <div class="footer-role">Data & AI Associate</div>
+    </div>
+    <nav class="social-links" aria-label="Sosyal medya bağlantıları">
+      <a href="https://github.com/tubaacelik" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.kaggle.com/tubacelikk1" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Kaggle">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.334z"/></svg>
+        Kaggle
+      </a>
+      <a href="https://www.linkedin.com/in/tuba-çelik/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://medium.com/@tubaacelikk11" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Medium">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+        Medium
+      </a>
+      <a href="https://x.com/ttubacelk" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        X
+      </a>
+      <span class="social-link" aria-label="Instagram" style="cursor:default;opacity:0.6;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+        Instagram
+      </span>
+    </nav>
+    <p class="footer-copy">© 2026 Tuba Çelik</p>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    const isOpen = !mobileMenu.hidden;
+    mobileMenu.hidden = isOpen;
+    mobileMenu.style.display = isOpen ? 'none' : 'flex';
+    hamburger.setAttribute('aria-expanded', String(!isOpen));
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      mobileMenu.hidden = true;
+      mobileMenu.style.display = 'none';
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+  function checkNav() {
+    const links = document.getElementById('nav-links-desktop');
+    if (window.innerWidth < 640) {
+      links.style.display = 'none';
+      hamburger.style.display = 'flex';
+    } else {
+      links.style.display = 'flex';
+      hamburger.style.display = 'none';
+      mobileMenu.hidden = true;
+      mobileMenu.style.display = 'none';
+    }
+  }
+  checkNav();
+  window.addEventListener('resize', checkNav);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
