@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projeler | Tuba Çelik</title>
-  <meta name="description" content="Tuba Çelik'in seçilmiş projeleri: Türkçe LLM geliştirme, veri analizi, kredi risk modeli ve daha fazlası." />
+  <title>Yazılarım | Tuba Çelik</title>
+  <meta name="description" content="Tuba Çelik'in Medium'da yayınladığı LLM geliştirme, fine-tuning ve yapay zeka üzerine teknik yazıları." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;800;900&display=swap" rel="stylesheet" />
@@ -17,8 +17,8 @@
     <a href="index.html" class="nav-logo">TC ✦</a>
     <ul class="nav-links" id="nav-links-desktop">
       <li><a href="ne-yapiyorum.html" target="_blank" rel="noopener noreferrer">Ne Yapıyorum</a></li>
-      <li><a href="projeler.html" class="active" target="_blank" rel="noopener noreferrer">Projeler</a></li>
-      <li><a href="yazilarim.html" target="_blank" rel="noopener noreferrer">Yazılarım</a></li>
+      <li><a href="projeler.html" target="_blank" rel="noopener noreferrer">Projeler</a></li>
+      <li><a href="yazilarim.html" class="active" target="_blank" rel="noopener noreferrer">Yazılarım</a></li>
       <li><a href="hakkimda.html" target="_blank" rel="noopener noreferrer">Hakkımda</a></li>
       <li><a href="yetenekler.html" target="_blank" rel="noopener noreferrer">Yetenekler</a></li>
       <li><a href="iletisim.html" target="_blank" rel="noopener noreferrer">İletişim</a></li>
@@ -29,8 +29,8 @@
   </div>
   <nav id="mobile-menu" aria-label="Mobil gezinme" hidden>
     <a href="ne-yapiyorum.html" target="_blank" rel="noopener noreferrer">Ne Yapıyorum</a>
-    <a href="projeler.html" class="active" target="_blank" rel="noopener noreferrer">Projeler</a>
-    <a href="yazilarim.html" target="_blank" rel="noopener noreferrer">Yazılarım</a>
+    <a href="projeler.html" target="_blank" rel="noopener noreferrer">Projeler</a>
+    <a href="yazilarim.html" class="active" target="_blank" rel="noopener noreferrer">Yazılarım</a>
     <a href="hakkimda.html" target="_blank" rel="noopener noreferrer">Hakkımda</a>
     <a href="yetenekler.html" target="_blank" rel="noopener noreferrer">Yetenekler</a>
     <a href="iletisim.html" target="_blank" rel="noopener noreferrer">İletişim</a>
@@ -38,155 +38,52 @@
 </nav>
 
 <div class="projeler-wrap">
-  <span class="section-label">Portföy</span>
-  <h2>SEÇİLMİŞ ÇALIŞMALAR</h2>
+  <span class="section-label" style="background:var(--peri);color:#fff;">Medium</span>
+  <h2>YAZILARIM</h2>
+  <p style="margin-top:16px;max-width:600px;color:#3a3530;">
+    LLM geliştirme, fine-tuning ve veri mühendisliği üzerine Medium'da yayınladığım teknik yazılar.
+  </p>
 
   <div class="proje-list" role="list">
 
-    <!-- 1 -->
-    <article class="proje-item fade-in" role="listitem" aria-label="MMX projesi">
-      <div class="proje-gorsel">
-        <img src="images/proje-mmx.png" alt="MMX Türkçe Pazarlama LLM projesi illüstrasyonu" />
+    <article class="card fade-in" role="listitem" style="padding:32px;">
+      <div class="proje-tags">
+        <span class="tag tag-teal">Meta</span>
+        <span class="tag tag-pembe">Kodlama Modelleri</span>
+        <span class="tag tag-gray">Temmuz 2026</span>
       </div>
-      <div class="proje-metin">
-        <div class="proje-tags">
-          <span class="tag tag-pembe">LLM</span>
-          <span class="tag tag-teal">Fine-tuning</span>
-          <span class="tag tag-peri">Veri Mühendisliği</span>
-          <span class="tag tag-gray">Şirket içi proje</span>
-        </div>
-        <h3 class="proje-title">MMX: Türkçe Pazarlama LLM'i</h3>
-        <p class="proje-desc">
-          Türkçe dijital pazarlama için uçtan uca dil modeli geliştirme.
-          12 alanı kapsayan 200.000+ satırlık sentetik eğitim seti kurdum,
-          JSONL pipeline'ı tasarladım ve yüzde 94 format uyumu sağlayan
-          otomatik kalite doğrulaması ekledim.
-        </p>
-        <div class="proje-links">
-          <a href="https://medium.com/@tubaacelikk11" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Medium'da Oku →</a>
-        </div>
+      <h3 class="proje-title">Meta, Kodlama Yarışına Geri Döndü</h3>
+      <p class="proje-desc">
+        Meta'nın yeni Muse Spark modeli SWE-Bench Pro'da GPT-5.5'i yakaladı ama Claude Opus 4.8 hâlâ önde.
+        Kodlama modelleri yarışında güncel tabloyu, Meta'nın olası altyapı kiralama planlarını ve
+        Türkiye'deki geliştiriciler için ne anlama geldiğini yazdım.
+      </p>
+      <div class="proje-links">
+        <a href="https://medium.com/p/1e17e3276f09" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Medium'da devamını oku →</a>
       </div>
     </article>
 
-    <!-- 2 -->
-    <article class="proje-item reverse fade-in" role="listitem" aria-label="Model skorlama projesi">
-      <div class="proje-gorsel">
-        <img src="images/proje-qwen.png" alt="Qwen fine-tuning karşılaştırması illüstrasyonu" />
+    <article class="card fade-in" role="listitem" style="padding:32px;">
+      <div class="proje-tags">
+        <span class="tag tag-sari">LoRA</span>
+        <span class="tag tag-mor">DPO</span>
+        <span class="tag tag-teal">Qwen3.5</span>
       </div>
-      <div class="proje-metin">
-        <div class="proje-tags">
-          <span class="tag tag-sari">LoRA</span>
-          <span class="tag tag-mor">DPO</span>
-          <span class="tag tag-teal">Benchmark</span>
-          <span class="tag tag-gray">Şirket içi proje</span>
-        </div>
-        <h3 class="proje-title">Qwen Çok-Model Fine-tuning Deneyi</h3>
-        <p class="proje-desc">
-          2B'den 27B'ye dört Qwen varyantını LoRA ve DPO ile karşılaştırdım.
-          27B'deki token açığını teşhis ederek üretim katmanı kararını şekillendirdim.
-          Bulguları yazıya döktüm: 2.000+ görüntülenme.
-        </p>
-        <div class="proje-links">
-          <a href="https://medium.com/@tubaacelikk11" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Medium'da Oku →</a>
-        </div>
+      <h3 class="proje-title">En Büyük Model Neden Kaybetti? Qwen3.5'in 4 Varyantını Dijital Pazarlama İçin Fine-Tune Etmek</h3>
+      <p class="proje-desc">
+        2B'den 27B'ye dört Qwen3.5 varyantını aynı veri setiyle fine-tune ettiğimiz denemede
+        en büyük model en iyi sonucu vermedi. Donanım kısıtlarının ve veri kalitesinin
+        performansı nasıl şekillendirdiğini, 9B modelin neden en dengeli seçim olduğunu anlattım.
+      </p>
+      <div class="proje-links">
+        <a href="https://medium.com/@tubaacelikk11/why-did-the-largest-model-lose-fine-tuning-4-qwen3-5-variants-for-digital-marketing-bab72bc47b83" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Medium'da devamını oku →</a>
       </div>
     </article>
 
-    <!-- 3 -->
-    <article class="proje-item fade-in" role="listitem" aria-label="LLM değerlendirme pipeline projesi">
-      <div class="proje-gorsel">
-        <img src="images/proje-skorlama.png" alt="Model skorlama sistemi illüstrasyonu" />
-      </div>
-      <div class="proje-metin">
-        <div class="proje-tags">
-          <span class="tag tag-peri">LLMOps</span>
-          <span class="tag tag-pembe">Evaluation</span>
-          <span class="tag tag-gray">Şirket içi proje</span>
-        </div>
-        <h3 class="proje-title">LLM Değerlendirme Pipeline Yeniden Tasarımı</h3>
-        <p class="proje-desc">
-          Skorlama pipeline'ını denetleyip ölçülen performansı yaklaşık 15 puan
-          baskılayan 12 artı metrik tutarsızlığını tespit ettim ve 200 artı soruda
-          standart metriklerle yeniden tasarladım.
-        </p>
-        <div class="proje-links">
-          <span class="tag tag-gray" style="padding:8px 16px;font-size:13px;">Şirket içi proje</span>
-        </div>
-      </div>
-    </article>
+  </div>
 
-    <!-- 4 -->
-    <article class="proje-item reverse fade-in" role="listitem" aria-label="Kredi kartı risk analizi projesi">
-      <div class="proje-gorsel">
-        <img src="images/proje-kredikarti.png" alt="Kredi kartı risk analizi illüstrasyonu" />
-      </div>
-      <div class="proje-metin">
-        <div class="proje-tags">
-          <span class="tag tag-sari">Python</span>
-          <span class="tag tag-teal">Pandas</span>
-          <span class="tag tag-pembe">Veri Analizi</span>
-        </div>
-        <h3 class="proje-title">Kredi Kartı Geç Ödeme Risk Analizi</h3>
-        <p class="proje-desc">
-          Müşteri düzeyinde finansal veriyle uçtan uca risk analizi: veri temizleme,
-          eksik değer kontrolleri, keşifsel analiz ve kural tabanlı risk skorlama.
-          Kaggle ve GitHub'da paylaşıldı.
-        </p>
-        <div class="proje-links">
-          <a href="https://github.com/tubaacelik" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub →</a>
-          <a href="https://www.kaggle.com/tubacelikk1" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Kaggle →</a>
-        </div>
-      </div>
-    </article>
-
-    <!-- 5 -->
-    <article class="proje-item fade-in" role="listitem" aria-label="On-prem LLM platformu projesi">
-      <div class="proje-gorsel">
-        <img src="images/proje-onprem.png" alt="On-prem LLM platformu illüstrasyonu" />
-      </div>
-      <div class="proje-metin">
-        <div class="proje-tags">
-          <span class="tag tag-teal">Ollama</span>
-          <span class="tag tag-peri">Open WebUI</span>
-          <span class="tag tag-mor">DGX Spark</span>
-          <span class="tag tag-gray">Şirket içi proje</span>
-        </div>
-        <h3 class="proje-title">On-prem LLM Platformu</h3>
-        <p class="proje-desc">
-          Gemma ve Qwen ile güvenli, şirket içi bir LLM platformu kurulumuna katıldım.
-          Ollama ve Open WebUI üzerinde model serving, DGX Spark altyapısında
-          dağıtım deneyimi.
-        </p>
-        <div class="proje-links">
-          <span class="tag tag-gray" style="padding:8px 16px;font-size:13px;">Şirket içi proje</span>
-        </div>
-      </div>
-    </article>
-
-    <!-- 6 -->
-    <article class="proje-item reverse fade-in" role="listitem" aria-label="Manuel kredi kartı risk skorlama aracı projesi">
-      <div class="proje-gorsel">
-        <img src="images/proje-riskskor.png" alt="Manuel kredi kartı risk skorlama aracı illüstrasyonu" />
-      </div>
-      <div class="proje-metin">
-        <div class="proje-tags">
-          <span class="tag tag-sari">Python</span>
-          <span class="tag tag-teal">Streamlit</span>
-          <span class="tag tag-pembe">Risk Skorlama</span>
-        </div>
-        <h3 class="proje-title">Manuel Kredi Kartı Risk Skorlama Aracı</h3>
-        <p class="proje-desc">
-          Kredi kartı geç ödeme riskini kural tabanlı mantıkla hesaplayan interaktif araç.
-          Kullanıcı girdilerine göre anlık risk skoru ve kategori üretiyor.
-          Kaggle ve GitHub'da yayınlandı.
-        </p>
-        <div class="proje-links">
-          <a href="https://github.com/tubaacelik" class="btn btn-primary" target="_blank" rel="noopener noreferrer">GitHub →</a>
-          <a href="https://www.kaggle.com/tubacelikk1" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Kaggle →</a>
-        </div>
-      </div>
-    </article>
-
+  <div style="margin-top:40px;">
+    <a href="https://medium.com/@tubaacelikk11" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Medium profilimin tamamı →</a>
   </div>
 </div>
 
