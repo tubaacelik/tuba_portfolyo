@@ -3,12 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hakkımda | Tuba Çelik</title>
-  <meta name="description" content="Tuba Çelik hakkında: veri mühendisliği, Türkçe LLM geliştirme ve içerik üreticiliği." />
+  <title>BM, Yapay Zeka Yönetişimi İçin Cenevre'de Toplandı | Tuba Çelik</title>
+  <meta name="description" content="169 ülkenin katıldığı BM Global Dialogue on AI Governance toplantısı ve Türkiye'deki geliştiriciler için anlamı." />
+  <link rel="canonical" href="https://medium.com/@tubaacelikk11/bm-yapay-zeka-y%C3%B6neti%C5%9Fimi-i%CC%87%C3%A7in-cenevrede-topland%C4%B1-03f2b9b78bb0" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .makale-wrap { max-width: 760px; margin: 0 auto; padding: 56px 24px 96px; }
+    .makale-wrap .section-label { margin-bottom: 20px; }
+    .makale-wrap h1 { font-size: clamp(30px,4.5vw,46px); margin-bottom: 12px; }
+    .makale-sub { font-size: 18px; color:#3a3530; margin-bottom: 32px; }
+    .makale-meta { display:flex; gap:12px; align-items:center; font-size:13px; font-weight:700; color:#7a7065; margin-bottom: 32px; }
+    .makale-cover { border: var(--border); border-radius: var(--radius-kart); box-shadow: var(--shadow-sm); overflow:hidden; margin-bottom: 40px; }
+    .makale-cover img { width:100%; display:block; }
+    .makale-body h2 { font-size: clamp(22px,3vw,28px); text-transform:none; margin: 40px 0 16px; }
+    .makale-body p { font-size:17px; line-height:1.75; color:#2a2520; margin-bottom: 20px; }
+    .makale-body a { color: var(--peri); font-weight: 700; text-decoration: underline; }
+    .makale-figure { margin: 32px 0; border: var(--border); border-radius: var(--radius-kart); box-shadow: var(--shadow-sm); overflow:hidden; }
+    .makale-figure img { width:100%; display:block; }
+    .makale-source { margin-top: 48px; padding-top: 24px; border-top: 2px solid rgba(26,26,26,.15); font-size: 14px; color:#7a7065; }
+    .makale-source a { color: var(--peri); font-weight:700; text-decoration: underline; }
+    .makale-back { display:inline-block; margin-bottom: 28px; font-weight:700; font-size:14px; text-decoration:none; }
+    .makale-back:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
 
@@ -18,9 +37,9 @@
     <ul class="nav-links" id="nav-links-desktop">
       <li><a href="/ne-yapiyorum" target="_blank" rel="noopener noreferrer">Ne Yapıyorum</a></li>
       <li><a href="/projeler" target="_blank" rel="noopener noreferrer">Projeler</a></li>
-      <li><a href="/blog" target="_blank" rel="noopener noreferrer">Blog</a></li>
+      <li><a href="/blog" class="active" target="_blank" rel="noopener noreferrer">Blog</a></li>
       <li><a href="/dokumanlar" target="_blank" rel="noopener noreferrer">Dokümanlar</a></li>
-      <li><a href="/hakkimda" class="active" target="_blank" rel="noopener noreferrer">Hakkımda</a></li>
+      <li><a href="/hakkimda" target="_blank" rel="noopener noreferrer">Hakkımda</a></li>
       <li><a href="/yetenekler" target="_blank" rel="noopener noreferrer">Yetenekler</a></li>
       <li><a href="/iletisim" target="_blank" rel="noopener noreferrer">İletişim</a></li>
     </ul>
@@ -31,77 +50,90 @@
   <nav id="mobile-menu" aria-label="Mobil gezinme" hidden>
     <a href="/ne-yapiyorum" target="_blank" rel="noopener noreferrer">Ne Yapıyorum</a>
     <a href="/projeler" target="_blank" rel="noopener noreferrer">Projeler</a>
-    <a href="/blog" target="_blank" rel="noopener noreferrer">Blog</a>
+    <a href="/blog" class="active" target="_blank" rel="noopener noreferrer">Blog</a>
     <a href="/dokumanlar" target="_blank" rel="noopener noreferrer">Dokümanlar</a>
-    <a href="/hakkimda" class="active" target="_blank" rel="noopener noreferrer">Hakkımda</a>
+    <a href="/hakkimda" target="_blank" rel="noopener noreferrer">Hakkımda</a>
     <a href="/yetenekler" target="_blank" rel="noopener noreferrer">Yetenekler</a>
     <a href="/iletisim" target="_blank" rel="noopener noreferrer">İletişim</a>
   </nav>
 </nav>
 
-<!-- Hakkımda -->
-<section id="hakkimda" aria-label="Hakkımda">
-  <div class="hakkimda-inner">
-    <div class="fade-in">
-      <span class="section-label" style="background:var(--sari);color:var(--siyah);">Benim Hakkımda</span>
-      <h2>HAKKIMDA</h2>
-      <div style="display:flex;flex-direction:column;gap:16px;margin-top:20px;">
-        <p>
-          Mad Cat Labs'ta Türkçe LLM geliştirme üzerine çalışıyorum. MMX projesinde 200.000+ satırlık,
-          sentetik ve gerçek veriden oluşan bir eğitim seti kurduk, Qwen ve Gemma gibi farklı model
-          aileleriyle LoRA ve DPO fine-tuning deneyleri yürüttük, değerlendirme pipeline'larını
-          tasarladık ve on-prem dağıtıma katıldık.
-        </p>
-        <p>
-          Uzun yıllar dijital analitikte ve performans pazarlamasında çalıştım. O dönemde verinin
-          nasıl okunduğunu, dönüştürüldüğünü ve karara çevrildiğini öğrendim. Şimdi bu altyapıyı
-          yapay zeka tarafına taşıyorum: n8n ile otomasyon kuruyor, model çıktılarını değerlendiriyor
-          ve geliştirme süreçlerini kolaylaştıracak araçlar inşa ediyorum.
-        </p>
-        <p>
-          Öğrendiklerimi paylaşmayı seviyorum. Instagram'da (@tubac3l1k) gündelik içerik,
-          Medium'da daha uzun teknik yazılar paylaşıyorum. İki kanal da Türkçe, çünkü yapay zekada
-          Türkçe kaynak açığı çok büyük ve bunu kapatmaya katkıda bulunmak istiyorum.
-        </p>
-      </div>
-    </div>
-    <div class="fade-in" style="display:flex;justify-content:center;">
-      <div class="hakkimda-img">
-        <img src="images/tuba-hero.png" alt="Tuba Çelik portresi, neobrutalist illüstrasyon" />
-      </div>
-    </div>
-  </div>
-</section>
+<article class="makale-wrap">
+  <a href="/blog" class="makale-back">← Blog'a dön</a>
 
-<!-- İçerik Üretiyorum -->
-<section id="icerik" aria-label="İçerik Üreticiliği">
-  <div class="icerik-inner">
-    <span class="section-label">Sosyal Medya</span>
-    <h2>İÇERİK ÜRETİYORUM</h2>
-    <p style="margin-top:16px;max-width:600px;color:#3a3530;">
-      Türkçe yapay zeka ve teknoloji içerikleri üretiyorum. Karmaşık konuları sade,
-      erişilebilir bir dile çeviriyorum.
+  <span class="section-label" style="background:var(--peri);color:#fff;">Yapay Zeka Politikası</span>
+  <h1>BM, Yapay Zeka Yönetişimi İçin Cenevre'de Toplandı</h1>
+  <p class="makale-sub">169 ülkenin katıldığı iki günlük diyalogda neler konuşuluyor</p>
+  <div class="makale-meta">
+    <span>Tuba Çelik</span>
+    <span>·</span>
+    <span>Temmuz 2026</span>
+    <span>·</span>
+    <span>2 dk okuma</span>
+  </div>
+
+  <div class="makale-cover">
+    <img src="images/blog-cenevre-cover.png" alt="Cenevre'de Yapay Zeka Zirvesi, 169 ülke" />
+  </div>
+
+  <div class="makale-body">
+    <h2>Ne oldu</h2>
+    <p>
+      Bugün Cenevre'de Birleşmiş Milletler'in ilk "Global Dialogue on AI Governance" toplantısı başladı.
+      169 ülkeden temsilci katılıyor, toplantı yarına kadar sürecek. Toplantı, BM Genel Kurulu'nun bir
+      kararıyla resmen kuruldu ve ITU,
+      <a href="https://www.unesco.org/en/articles/global-dialogue-ai-governance-geneva-6-7-july" target="_blank" rel="noopener noreferrer">UNESCO</a>
+      ile BM Dijital ve Yeni Teknolojiler Ofisi tarafından birlikte yürütülüyor. Ortak başkanlığını
+      El Salvador'dan Egriselda López ve Estonya'dan Rein Tammsaar yapıyor.
+    </p>
+    <p>
+      Toplantının gündemi dört ana başlıktan oluşuyor: yapay zeka yönetişim çerçeveleri, gelişmekte olan
+      ülkeler için yapay zeka erişimi, yapay zeka ve enerji sürdürülebilirliği, yapay zeka ve siber güvenlik.
+      Yarın Cenevre'de ITU AI for Good Zirvesi başlayacak, 8 Temmuz'da da yeni kurulan BM AI for Good
+      Komisyonu ilk toplantısını yapacak. Komisyonda Nvidia'dan Jensen Huang, Amazon'dan Andy Jassy,
+      Microsoft'tan Brad Smith ve Anthropic'ten Jack Clark gibi isimler de yer alıyor.
     </p>
 
-    <div class="icerik-grid" role="list">
+    <div class="makale-figure">
+      <img src="images/blog-cenevre-agenda.png" alt="Cenevre diyaloğunun dört gündem başlığı" />
+    </div>
 
-      <div class="icerik-card pembe fade-in" role="listitem" aria-label="Instagram hesabı">
-        <div class="arrow" aria-hidden="true">📸</div>
-        <h3>@tubac3l1k</h3>
-        <p>Yapay zeka ve teknoloji içerikleri. Gündelik Türkçe paylaşımlar.</p>
-        <span class="arrow" aria-hidden="true">↗</span>
-      </div>
+    <h2>Neden önemli</h2>
+    <p>
+      Toplantının amacı bağlayıcı bir antlaşma imzalamak değil, katılımcı ülkelerin ortak bir kelime
+      dağarcığı ve asgari prosedürel standartlar üzerinde anlaşmasını sağlamak. Farklı ülkelerin yapay
+      zeka erişimi ve düzenlemesi konusunda farklı öncelikleri var; bu toplantı, o farklı öncelikleri aynı
+      masada tartışmak için kuruldu. Konuyu güncel yapan gelişmelerden biri, geçtiğimiz ay bir yapay zeka
+      modelinin ihracat kontrolleri kapsamında geçici olarak küresel erişime kapatılmış olması; bu olay,
+      erişim güvencesi ve öngörülebilirlik konusunu uluslararası gündeme taşıdı.
+    </p>
 
-      <a href="https://medium.com/@tubaacelikk11" class="icerik-card peri fade-in" target="_blank" rel="noopener noreferrer" role="listitem" aria-label="Medium blogu">
-        <div class="arrow" aria-hidden="true">✍️</div>
-        <h3>Medium Blog</h3>
-        <p>LLM geliştirme, fine-tuning ve veri mühendisliği üzerine teknik yazılar.</p>
-        <span class="arrow" aria-hidden="true">↗</span>
-      </a>
+    <h2>Türkiye'deki geliştirici için ne anlama geliyor</h2>
+    <p>
+      Türkiye'de yapay zeka ürünü geliştiren ekiplerin büyük kısmı, altyapısının önemli bir bölümünü yurt
+      dışı kaynaklı frontier modeller (GPT, Claude, Gemini ailesi gibi) üzerine kuruyor. Cenevre'deki
+      tartışmalar, bu tür modellere erişimin uzun vadede nasıl düzenleneceğine dair henüz netleşmemiş bir
+      alan olduğunu gösteriyor. Bu da erişim planlamasında esneklik ve alternatif seçeneklerin (yerel
+      çalıştırılabilen açık kaynak modeller gibi) neden değerlendirilmeye değer olduğunu ortaya koyuyor.
+    </p>
 
+    <h2>Benim yorumum</h2>
+    <p>
+      <a href="https://medium.com/@tubaacelikk11/why-did-the-largest-model-lose-fine-tuning-4-qwen3-5-variants-for-digital-marketing-bab72bc47b83" target="_blank" rel="noopener noreferrer">Qwen3.5 ailesiyle yaptığımız fine-tuning deneyinde</a>,
+      dışarıdan gelen tek bir modele bağımlı olmak yerine kendi kontrolünüzde çalışan bir alternatifin
+      olmasının pratik esneklik sağladığını görmüştük. O deneyde konu maliyet ve donanımdı. Cenevre'deki
+      tartışmalar ise erişim planlamasının sadece teknik değil, aynı zamanda uluslararası düzenleme boyutu
+      da olduğunu gösteriyor. Bu yüzden yerel ve açık kaynak model yeteneği kurmayı, teknik bir tercihin
+      ötesinde bir güvence unsuru olarak değerlendiriyorum.
+    </p>
+
+    <div class="makale-source">
+      Kaynaklar: UN News, UNESCO, ITU (6 Temmuz 2026). Bu yazı ayrıca
+      <a href="https://medium.com/@tubaacelikk11/bm-yapay-zeka-y%C3%B6neti%C5%9Fimi-i%CC%87%C3%A7in-cenevrede-topland%C4%B1-03f2b9b78bb0" target="_blank" rel="noopener noreferrer">Medium'da</a>
+      yayınlanmıştır.
     </div>
   </div>
-</section>
+</article>
 
 <footer role="contentinfo">
   <div class="footer-inner">
@@ -151,12 +183,6 @@
   }
   checkNav();
   window.addEventListener('resize', checkNav);
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>

@@ -2,10 +2,10 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    {
-      "source": "/yazilarim",
-      "destination": "/blog",
-      "permanent": true
-    }
+    { "source": "/yazilarim", "destination": "/blog", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/dokumanlar", "destination": "/dokumanlar.html" },
+    { "source": "/dokumanlar/:slug", "destination": "/dokumanlar/:slug.html" }
   ]
 }
