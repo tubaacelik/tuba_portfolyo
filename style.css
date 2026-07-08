@@ -195,6 +195,29 @@ a  { color: inherit; }
 .nav-links a:hover  { background: var(--sari); }
 .nav-links a.active { background: var(--sari); }
 
+/* ── Dil değiştirici ── */
+.lang-switch {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 800 !important;
+  font-size: 12px !important;
+  letter-spacing: 0.04em;
+  border: 2.5px solid var(--siyah);
+  border-radius: var(--radius-pill);
+  padding: 5px 12px !important;
+  background: var(--kart);
+  box-shadow: 2px 2px 0 var(--siyah);
+  transition: transform 120ms, box-shadow 120ms;
+}
+.lang-switch:hover {
+  background: var(--kart) !important;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 var(--siyah);
+}
+#mobile-menu .lang-switch {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;

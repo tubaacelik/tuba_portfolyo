@@ -6,6 +6,8 @@
   ],
   "rewrites": [
     { "source": "/dokumanlar", "destination": "/dokumanlar.html" },
-    { "source": "/dokumanlar/:slug", "destination": "/dokumanlar/:slug.html" }
+    { "source": "/dokumanlar/:slug", "destination": "/dokumanlar/:slug.html" },
+    { "source": "/en/documents", "destination": "/en/documents.html" },
+    { "source": "/en/documents/:slug", "destination": "/en/documents/:slug.html" }
   ]
 }

@@ -1,43 +1,43 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog | Tuba Çelik</title>
-  <meta name="description" content="Tuba Çelik'in blogu: LLM geliştirme, fine-tuning ve yapay zeka üzerine teknik yazılar." />
+  <meta name="description" content="Tuba Çelik's blog: technical writing on LLM development, fine-tuning and AI." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
 
-<nav id="navbar" role="navigation" aria-label="Ana gezinme">
+<nav id="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-inner">
-    <a href="/" class="nav-logo">TC ✦</a>
+    <a href="/en" class="nav-logo">TC ✦</a>
     <ul class="nav-links" id="nav-links-desktop">
-      <li><a href="/ne-yapiyorum" target="_blank" rel="noopener noreferrer">Ne Yapıyorum</a></li>
-      <li><a href="/projeler" target="_blank" rel="noopener noreferrer">Projeler</a></li>
-      <li><a href="/blog" class="active" target="_blank" rel="noopener noreferrer">Blog</a></li>
-      <li><a href="/dokumanlar" target="_blank" rel="noopener noreferrer">Dokümanlar</a></li>
-      <li><a href="/hakkimda" target="_blank" rel="noopener noreferrer">Hakkımda</a></li>
-      <li><a href="/yetenekler" target="_blank" rel="noopener noreferrer">Yetenekler</a></li>
-      <li><a href="/iletisim" target="_blank" rel="noopener noreferrer">İletişim</a></li>
-      <li><a href="/en/blog" class="lang-switch">EN</a></li>
+      <li><a href="/en/what-i-do" target="_blank" rel="noopener noreferrer">What I Do</a></li>
+      <li><a href="/en/projects" target="_blank" rel="noopener noreferrer">Projects</a></li>
+      <li><a href="/en/blog" class="active" target="_blank" rel="noopener noreferrer">Blog</a></li>
+      <li><a href="/en/documents" target="_blank" rel="noopener noreferrer">Documents</a></li>
+      <li><a href="/en/about" target="_blank" rel="noopener noreferrer">About</a></li>
+      <li><a href="/en/skills" target="_blank" rel="noopener noreferrer">Skills</a></li>
+      <li><a href="/en/contact" target="_blank" rel="noopener noreferrer">Contact</a></li>
+      <li><a href="/blog" class="lang-switch">TR</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menüyü aç" aria-expanded="false">
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
-  <nav id="mobile-menu" aria-label="Mobil gezinme" hidden>
-    <a href="/ne-yapiyorum" target="_blank" rel="noopener noreferrer">Ne Yapıyorum</a>
-    <a href="/projeler" target="_blank" rel="noopener noreferrer">Projeler</a>
-    <a href="/blog" class="active" target="_blank" rel="noopener noreferrer">Blog</a>
-    <a href="/dokumanlar" target="_blank" rel="noopener noreferrer">Dokümanlar</a>
-    <a href="/hakkimda" target="_blank" rel="noopener noreferrer">Hakkımda</a>
-    <a href="/yetenekler" target="_blank" rel="noopener noreferrer">Yetenekler</a>
-    <a href="/iletisim" target="_blank" rel="noopener noreferrer">İletişim</a>
-    <a href="/en/blog" class="lang-switch">EN</a>
+  <nav id="mobile-menu" aria-label="Mobile navigation" hidden>
+    <a href="/en/what-i-do" target="_blank" rel="noopener noreferrer">What I Do</a>
+    <a href="/en/projects" target="_blank" rel="noopener noreferrer">Projects</a>
+    <a href="/en/blog" class="active" target="_blank" rel="noopener noreferrer">Blog</a>
+    <a href="/en/documents" target="_blank" rel="noopener noreferrer">Documents</a>
+    <a href="/en/about" target="_blank" rel="noopener noreferrer">About</a>
+    <a href="/en/skills" target="_blank" rel="noopener noreferrer">Skills</a>
+    <a href="/en/contact" target="_blank" rel="noopener noreferrer">Contact</a>
+    <a href="/blog" class="lang-switch">TR</a>
   </nav>
 </nav>
 
@@ -45,7 +45,7 @@
   <span class="section-label" style="background:var(--peri);color:#fff;">Medium</span>
   <h2>BLOG</h2>
   <p style="margin-top:16px;max-width:600px;color:#3a3530;">
-    LLM geliştirme, fine-tuning ve veri mühendisliği üzerine Medium'da yayınladığım teknik yazılar.
+    Technical writing on LLM development, fine-tuning and data engineering, published on Medium.
   </p>
 
   <div class="proje-list" role="list">
@@ -54,50 +54,53 @@
       <div class="proje-tags">
         <span class="tag tag-mor">OpenAI</span>
         <span class="tag tag-teal">Benchmark</span>
-        <span class="tag tag-gray">Temmuz 2026</span>
+        <span class="tag tag-gray">July 2026</span>
       </div>
-      <h3 class="proje-title">Yapay Zeka Gerçek Biyoloji Sorularının Üçte Birini Çözebiliyor: GeneBench-Pro Ne Gösteriyor</h3>
+      <h3 class="proje-title">AI Can Now Solve a Third of Real Biology Questions: What GeneBench-Pro Shows</h3>
       <p class="proje-desc">
-        OpenAI'ın genomik, kantitatif biyoloji ve translasyonel tıptan 129 problemle oluşturduğu
-        GeneBench-Pro benchmark'ında en güçlü modeli GPT-5.6 Sol, en yüksek akıl yürütme seviyesinde
-        yüzde 28.7 başarı oranına ulaştı, Pro modda bu oran yüzde 31.5'e çıkıyor. Sonuçların yapay
-        zekanın bilimsel araştırmaya katkısı için ne anlama geldiğini yazdım.
+        On OpenAI's GeneBench-Pro benchmark — built from 129 problems spanning
+        genomics, quantitative biology and translational medicine — the
+        strongest model, GPT-5.6 Sol, reached a 28.7% success rate at its
+        highest reasoning level, rising to 31.5% in Pro mode. I wrote about
+        what the results mean for AI's contribution to scientific research.
       </p>
       <div class="proje-links">
-        <a href="https://medium.com/@tubaacelikk11/yapay-zeka-ger%C3%A7ek-biyoloji-sorular%C4%B1n%C4%B1n-%C3%BC%C3%A7te-birini-%C3%A7%C3%B6zebiliyor-genebench-pro-ne-g%C3%B6steriyor-bdd5f13b50fd" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Medium'da devamını oku →</a>
+        <a href="https://medium.com/@tubaacelikk11/yapay-zeka-ger%C3%A7ek-biyoloji-sorular%C4%B1n%C4%B1n-%C3%BC%C3%A7te-birini-%C3%A7%C3%B6zebiliyor-genebench-pro-ne-g%C3%B6steriyor-bdd5f13b50fd" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Read on Medium →</a>
       </div>
     </article>
 
     <article class="card fade-in" role="listitem" style="padding:32px;">
       <div class="proje-tags">
-        <span class="tag tag-peri">BM</span>
-        <span class="tag tag-sari">Yapay Zeka Politikası</span>
-        <span class="tag tag-gray">Temmuz 2026</span>
+        <span class="tag tag-peri">UN</span>
+        <span class="tag tag-sari">AI Policy</span>
+        <span class="tag tag-gray">July 2026</span>
       </div>
-      <h3 class="proje-title">BM, Yapay Zeka Yönetişimi İçin Cenevre'de Toplandı</h3>
+      <h3 class="proje-title">The UN Gathered in Geneva for AI Governance</h3>
       <p class="proje-desc">
-        169 ülkenin katıldığı ilk BM Global Dialogue on AI Governance toplantısını,
-        gündemdeki dört başlığı ve Türkiye'deki geliştiriciler için ne anlama geldiğini yazdım.
+        I wrote about the first UN Global Dialogue on AI Governance, attended
+        by 169 countries, the four topics on the agenda, and what it means
+        for developers in Turkey.
       </p>
       <div class="proje-links">
-        <a href="https://medium.com/@tubaacelikk11/bm-yapay-zeka-y%C3%B6neti%C5%9Fimi-i%CC%87%C3%A7in-cenevrede-topland%C4%B1-03f2b9b78bb0" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Medium'da devamını oku →</a>
+        <a href="/en/un-geneva-ai-governance-dialogue" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Read on the site →</a>
       </div>
     </article>
 
     <article class="card fade-in" role="listitem" style="padding:32px;">
       <div class="proje-tags">
         <span class="tag tag-teal">Meta</span>
-        <span class="tag tag-pembe">Kodlama Modelleri</span>
-        <span class="tag tag-gray">Temmuz 2026</span>
+        <span class="tag tag-pembe">Coding Models</span>
+        <span class="tag tag-gray">July 2026</span>
       </div>
-      <h3 class="proje-title">Meta, Kodlama Yarışına Geri Döndü</h3>
+      <h3 class="proje-title">Meta Is Back in the Coding Race</h3>
       <p class="proje-desc">
-        Meta'nın yeni Muse Spark modeli SWE-Bench Pro'da GPT-5.5'i yakaladı ama Claude Opus 4.8 hâlâ önde.
-        Kodlama modelleri yarışında güncel tabloyu, Meta'nın olası altyapı kiralama planlarını ve
-        Türkiye'deki geliştiriciler için ne anlama geldiğini yazdım.
+        Meta's new Muse Spark model has caught up to GPT-5.5 on SWE-Bench Pro,
+        but Claude Opus 4.8 is still ahead. I wrote about the current state of
+        the coding-model race, Meta's possible infrastructure-leasing plans,
+        and what it means for developers in Turkey.
       </p>
       <div class="proje-links">
-        <a href="https://medium.com/p/1e17e3276f09" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Medium'da devamını oku →</a>
+        <a href="https://medium.com/p/1e17e3276f09" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Read on Medium →</a>
       </div>
     </article>
 
@@ -107,21 +110,22 @@
         <span class="tag tag-mor">DPO</span>
         <span class="tag tag-teal">Qwen3.5</span>
       </div>
-      <h3 class="proje-title">En Büyük Model Neden Kaybetti? Qwen3.5'in 4 Varyantını Dijital Pazarlama İçin Fine-Tune Etmek</h3>
+      <h3 class="proje-title">Why Did the Largest Model Lose? Fine-Tuning 4 Qwen3.5 Variants for Digital Marketing</h3>
       <p class="proje-desc">
-        2B'den 27B'ye dört Qwen3.5 varyantını aynı veri setiyle fine-tune ettiğimiz denemede
-        en büyük model en iyi sonucu vermedi. Donanım kısıtlarının ve veri kalitesinin
-        performansı nasıl şekillendirdiğini, 9B modelin neden en dengeli seçim olduğunu anlattım.
+        In an experiment fine-tuning four Qwen3.5 variants from 2B to 27B on
+        the same dataset, the largest model didn't win. I wrote about how
+        hardware constraints and data quality shaped performance, and why the
+        9B model turned out to be the most balanced choice.
       </p>
       <div class="proje-links">
-        <a href="https://medium.com/@tubaacelikk11/why-did-the-largest-model-lose-fine-tuning-4-qwen3-5-variants-for-digital-marketing-bab72bc47b83" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Medium'da devamını oku →</a>
+        <a href="https://medium.com/@tubaacelikk11/why-did-the-largest-model-lose-fine-tuning-4-qwen3-5-variants-for-digital-marketing-bab72bc47b83" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Read on Medium →</a>
       </div>
     </article>
 
   </div>
 
   <div style="margin-top:40px;">
-    <a href="https://medium.com/@tubaacelikk11" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Medium profilimin tamamı →</a>
+    <a href="https://medium.com/@tubaacelikk11" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">See my full Medium profile →</a>
   </div>
 </div>
 
@@ -131,7 +135,7 @@
       <div class="footer-logo">Tuba <span>Çelik</span></div>
       <div class="footer-role">Data & AI Associate</div>
     </div>
-    <nav class="social-links" aria-label="Sosyal medya bağlantıları">
+    <nav class="social-links" aria-label="Social media links">
       <a href="https://github.com/tubaacelik" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
       <a href="https://www.kaggle.com/tubacelikk1" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Kaggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.334z"/></svg> Kaggle</a>
       <a href="https://www.linkedin.com/in/tuba-çelik/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
