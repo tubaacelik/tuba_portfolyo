@@ -449,6 +449,11 @@ a  { color: inherit; }
 .proje-tags  { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
 .proje-title { font-size: clamp(20px, 3vw, 26px); margin-bottom: 12px; }
 .proje-desc  { font-size: 15px; color: #3a3530; line-height: 1.65; margin-bottom: 20px; }
+
+.proje-nke { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; padding: 0; }
+.proje-nke > div { display: grid; grid-template-columns: 80px 1fr; gap: 8px; align-items: baseline; }
+.proje-nke dt { font-size: 10px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--pembe); padding-top: 3px; }
+.proje-nke dd { font-size: 14px; color: #3a3530; line-height: 1.6; margin: 0; }
 .proje-links { display: flex; gap: 10px; flex-wrap: wrap; }
 
 /* ════════════════════════════════════════

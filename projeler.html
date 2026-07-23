@@ -70,12 +70,11 @@
           <span class="tag tag-gray">Şirket içi proje</span>
         </div>
         <h3 class="proje-title">MMX: Türkçe Pazarlama LLM'i</h3>
-        <p class="proje-desc">
-          Türkçe dijital pazarlama için uçtan uca dil modeli geliştirme.
-          12 alanı kapsayan 200.000+ satırlık sentetik eğitim seti kurdum,
-          JSONL pipeline'ı tasarladım ve yüzde 94 format uyumu sağlayan
-          otomatik kalite doğrulaması ekledim.
-        </p>
+        <dl class="proje-nke">
+          <div><dt>NEDEN</dt><dd>Genel amaçlı LLM'ler Türkçe pazarlama metni üretirken tutarsız tonlama ve format hataları veriyordu; alana özgü bir model yoktu.</dd></div>
+          <div><dt>YAKLAŞIM</dt><dd>12 kategoride 200.000+ satırlık sentetik veri kurguladım; her kaydın kural uyumluluğunu otomatik doğrulayan JSONL pipeline tasarladım.</dd></div>
+          <div><dt>ETKİ</dt><dd>%94 format uyum oranı sağlandı.</dd></div>
+        </dl>
         <div class="proje-links">
           <a href="/projeler/mmx-turkce-pazarlama-llm" class="btn btn-primary">Vaka Çalışması →</a>
           <a href="https://medium.com/@tubaacelikk11" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Medium'da Oku</a>
@@ -95,12 +94,12 @@
           <span class="tag tag-teal">Benchmark</span>
           <span class="tag tag-gray">Şirket içi proje</span>
         </div>
-        <h3 class="proje-title">Qwen Çok-Model Fine-tuning Deneyi</h3>
-        <p class="proje-desc">
-          2B'den 27B'ye dört Qwen varyantını LoRA ve DPO ile karşılaştırdım.
-          27B'deki token açığını teşhis ederek üretim katmanı kararını şekillendirdim.
-          Bulguları yazıya döktüm: 2.000+ görüntülenme.
-        </p>
+        <h3 class="proje-title">Qwen: Büyük Model Küçük Modeli Neden Geçemedi?</h3>
+        <dl class="proje-nke">
+          <div><dt>NEDEN</dt><dd>"Büyük model daha iyidir" varsayımı sorgulanmıyordu; hangi boyutun üretim kalitesi sunacağı belirsizdi.</dd></div>
+          <div><dt>YAKLAŞIM</dt><dd>2B–27B arası dört varyantı LoRA ve DPO ile aynı veri setinde eğittim; 27B'nin beklenti altında kalmasını token boşluklarında teşhis ettim.</dd></div>
+          <div><dt>ETKİ</dt><dd>Üretim model kararı bu analize dayandırıldı. Bulgular Medium'da yayınlandı: 2.000+ görüntülenme.</dd></div>
+        </dl>
         <div class="proje-links">
           <a href="/projeler/qwen-fine-tuning-deneyi" class="btn btn-primary">Vaka Çalışması →</a>
           <a href="https://medium.com/@tubaacelikk11" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Medium'da Oku</a>
@@ -119,12 +118,12 @@
           <span class="tag tag-pembe">Evaluation</span>
           <span class="tag tag-gray">Şirket içi proje</span>
         </div>
-        <h3 class="proje-title">LLM Değerlendirme Pipeline Yeniden Tasarımı</h3>
-        <p class="proje-desc">
-          Skorlama pipeline'ını denetleyip ölçülen performansı yaklaşık 15 puan
-          baskılayan 12 artı metrik tutarsızlığını tespit ettim ve 200 artı soruda
-          standart metriklerle yeniden tasarladım.
-        </p>
+        <h3 class="proje-title">LLM Değerlendirme: Ölçüm Sistemi Modeli Küçük Gösteriyordu</h3>
+        <dl class="proje-nke">
+          <div><dt>NEDEN</dt><dd>Fine-tuning kararları için kullandığımız değerlendirme sistemi güvenilir değildi; 12'den fazla metrik tutarsızlığı gerçek performansı ~15 puan bastırıyordu.</dd></div>
+          <div><dt>YAKLAŞIM</dt><dd>Her tutarsızlığı belgeledim; 200+ soruluk standart Türkçe benchmark tasarlayarak sistemi sıfırdan yeniden kurdum.</dd></div>
+          <div><dt>ETKİ</dt><dd>Sonraki tüm model karşılaştırmaları bu sisteme dayandı.</dd></div>
+        </dl>
         <div class="proje-links">
           <a href="/projeler/llm-degerlendirme-pipeline" class="btn btn-primary">Vaka Çalışması →</a>
         </div>
@@ -142,12 +141,12 @@
           <span class="tag tag-teal">Pandas</span>
           <span class="tag tag-pembe">Veri Analizi</span>
         </div>
-        <h3 class="proje-title">Kredi Kartı Geç Ödeme Risk Analizi</h3>
-        <p class="proje-desc">
-          Müşteri düzeyinde finansal veriyle uçtan uca risk analizi: veri temizleme,
-          eksik değer kontrolleri, keşifsel analiz ve kural tabanlı risk skorlama.
-          Kaggle ve GitHub'da paylaşıldı.
-        </p>
+        <h3 class="proje-title">Kredi Kartı Geç Ödeme: Hangi Müşteri Grubu Risk Taşıyor?</h3>
+        <dl class="proje-nke">
+          <div><dt>NEDEN</dt><dd>Geç ödeme riskini yalnızca bakiye veya limitle açıklamak yetersizdi; davranışsal örüntülere dayanan açıklanabilir bir modele ihtiyaç vardı.</dd></div>
+          <div><dt>YAKLAŞIM</dt><dd>284K işlem kaydındaki eksik ve tutarsız verileri temizledim; ödeme davranış örüntülerini analiz ederek kural tabanlı bir risk skorlama sistemi kurdum.</dd></div>
+          <div><dt>ETKİ</dt><dd>%92 AUC-ROC skoru. Model Kaggle'da yayınlandı.</dd></div>
+        </dl>
         <div class="proje-links">
           <a href="/projeler/kredi-karti-risk-analizi" class="btn btn-primary">Vaka Çalışması →</a>
           <a href="https://github.com/tubaacelik" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -168,12 +167,12 @@
           <span class="tag tag-mor">DGX Spark</span>
           <span class="tag tag-gray">Şirket içi proje</span>
         </div>
-        <h3 class="proje-title">On-prem LLM Platformu</h3>
-        <p class="proje-desc">
-          Gemma ve Qwen ile güvenli, şirket içi bir LLM platformu kurulumuna katıldım.
-          Ollama ve Open WebUI üzerinde model serving, DGX Spark altyapısında
-          dağıtım deneyimi.
-        </p>
+        <h3 class="proje-title">On-Prem LLM Platformu: Veri Dışarı Çıkmamalıydı</h3>
+        <dl class="proje-nke">
+          <div><dt>NEDEN</dt><dd>Kurumsal müşteriler veri gizliliği nedeniyle bulut LLM API'larını kullanamıyordu; kendi sunucularında çalışan, standart API sunan bir platforma ihtiyaç vardı.</dd></div>
+          <div><dt>YAKLAŞIM</dt><dd>vLLM ile OpenAI-uyumlu endpoint kurdum; 2B–27B model aralığını tensor parallelism ile çok-GPU'ya yaydım ve gecikme/kullanım metriklerini izleme altyapısına bağladım.</dd></div>
+          <div><dt>ETKİ</dt><dd>İlk token gecikmesi 2 saniyenin altında tutuldu. Verinin tamamı şirket altyapısında kaldı.</dd></div>
+        </dl>
         <div class="proje-links">
           <a href="/projeler/on-prem-llm-platformu" class="btn btn-primary">Vaka Çalışması →</a>
         </div>
@@ -191,12 +190,12 @@
           <span class="tag tag-teal">Streamlit</span>
           <span class="tag tag-pembe">Risk Skorlama</span>
         </div>
-        <h3 class="proje-title">Manuel Kredi Kartı Risk Skorlama Aracı</h3>
-        <p class="proje-desc">
-          Kredi kartı geç ödeme riskini kural tabanlı mantıkla hesaplayan interaktif araç.
-          Kullanıcı girdilerine göre anlık risk skoru ve kategori üretiyor.
-          Kaggle ve GitHub'da yayınlandı.
-        </p>
+        <h3 class="proje-title">Risk Skorlama Aracı: LLM Verisinde Kalite Kontrolü</h3>
+        <dl class="proje-nke">
+          <div><dt>NEDEN</dt><dd>LLM eğitim pipeline'ına giren verinin kalitesi ve içerik güvenliği manuel incelemeyle kontrol ediliyordu; günde binlerce kayıt için bu sürdürülemezdi.</dd></div>
+          <div><dt>YAKLAŞIM</dt><dd>Her veri kaydını dil kalitesi, içerik güvenliği ve talimat uyumu dahil 7 boyutta bağımsız modülerle puanlayan ve ops ekibine Streamlit dashboard sunan bir sistem geliştirdim.</dd></div>
+          <div><dt>ETKİ</dt><dd>%91 precision ile manuel inceleme iş yükü %60 azaldı.</dd></div>
+        </dl>
         <div class="proje-links">
           <a href="/projeler/risk-skorlama-araci" class="btn btn-primary">Vaka Çalışması →</a>
           <a href="https://github.com/tubaacelik" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">GitHub</a>

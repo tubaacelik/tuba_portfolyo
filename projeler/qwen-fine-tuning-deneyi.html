@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Qwen Fine-Tuning Deneyi | Tuba Çelik</title>
-  <meta name="description" content="Qwen modelinin Türkçe talimat takibi için QLoRA ile fine-tuning deneyi: veri hazırlama, eğitim ve karşılaştırmalı değerlendirme." />
+  <meta name="description" content="Büyük model her zaman daha iyi midir? 2B–27B Qwen varyantlarını karşılaştıran fine-tuning deneyi: teşhis, karar ve bulgular." />
   <link rel="canonical" href="https://tubacelik.co/projeler/qwen-fine-tuning-deneyi" />
   <meta property="og:title" content="Qwen Fine-Tuning Deneyi | Tuba Çelik" />
-  <meta property="og:description" content="Qwen modelinin Türkçe talimat takibi için QLoRA ile fine-tuning deneyi." />
+  <meta property="og:description" content="Büyük model her zaman daha iyi midir? 2B–27B Qwen varyantları karşılaştırması." />
   <meta property="og:url" content="https://tubacelik.co/projeler/qwen-fine-tuning-deneyi" />
   <meta property="og:type" content="article" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,26 +19,28 @@
     .case-back { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: var(--siyah); text-decoration: none; margin-bottom: 32px; border: 2px solid var(--siyah); padding: 8px 16px; box-shadow: 3px 3px 0 var(--siyah); transition: box-shadow .15s, transform .15s; }
     .case-back:hover { box-shadow: none; transform: translate(3px,3px); }
     .case-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; background: var(--teal); color: #fff; padding: 4px 12px; border: 2px solid var(--siyah); margin-bottom: 16px; }
-    .case-title { font-size: clamp(28px,5vw,48px); font-weight: 900; line-height: 1.1; letter-spacing: -.03em; text-transform: uppercase; margin-bottom: 24px; }
+    .case-title { font-size: clamp(26px,5vw,44px); font-weight: 900; line-height: 1.1; letter-spacing: -.03em; text-transform: uppercase; margin-bottom: 24px; }
     .case-meta { display: flex; gap: 24px; flex-wrap: wrap; font-size: 13px; color: #5a5550; font-weight: 600; margin-bottom: 40px; padding-bottom: 32px; border-bottom: 3px solid var(--siyah); }
-    .case-img { width: 100%; aspect-ratio: 16/9; object-fit: cover; border: 3px solid var(--siyah); box-shadow: 6px 6px 0 var(--siyah); margin-bottom: 48px; overflow: hidden; }
+    .case-img { width: 100%; aspect-ratio: 16/9; border: 3px solid var(--siyah); box-shadow: 6px 6px 0 var(--siyah); margin-bottom: 48px; overflow: hidden; background: #f0ebe3; }
     .case-img img { width: 100%; height: 100%; object-fit: cover; }
-    .case-section { margin-bottom: 40px; }
-    .case-section h2 { font-size: 20px; font-weight: 900; text-transform: uppercase; letter-spacing: -.02em; margin-bottom: 16px; padding-left: 12px; border-left: 4px solid var(--teal); }
-    .case-section p { font-size: 16px; line-height: 1.75; color: #2a2520; margin-bottom: 12px; }
-    .case-section ul { padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 1.65; color: #2a2520; }
-    .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin: 24px 0; }
-    .stat-box { border: 3px solid var(--siyah); padding: 20px 16px; box-shadow: 4px 4px 0 var(--siyah); text-align: center; }
-    .stat-box-num { font-size: 32px; font-weight: 900; color: var(--teal); line-height: 1; }
-    .stat-box-lbl { font-size: 12px; font-weight: 700; color: #5a5550; text-transform: uppercase; letter-spacing: .06em; margin-top: 6px; }
+    .case-section { margin-bottom: 36px; }
+    .case-section h2 { font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: .1em; color: var(--teal); margin-bottom: 10px; }
+    .case-section p { font-size: 16px; line-height: 1.78; color: #2a2520; margin-bottom: 12px; }
+    .case-section ul { padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.65; color: #2a2520; }
+    .case-divider { border: none; border-top: 2px solid #e8e2d8; margin: 40px 0; }
+    .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 14px; margin: 28px 0; }
+    .stat-box { border: 3px solid var(--siyah); padding: 18px 14px; box-shadow: 4px 4px 0 var(--siyah); text-align: center; }
+    .stat-box-num { font-size: 28px; font-weight: 900; color: var(--teal); line-height: 1; }
+    .stat-box-lbl { font-size: 11px; font-weight: 700; color: #5a5550; text-transform: uppercase; letter-spacing: .06em; margin-top: 6px; }
+    .todo-box { background: #fffbe6; border: 2px dashed #c9a200; padding: 16px 20px; font-size: 14px; line-height: 1.65; color: #5a4800; margin-top: 12px; }
+    .todo-box strong { display: block; margin-bottom: 6px; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+    .todo-box ul { padding-left: 18px; margin: 0; display: flex; flex-direction: column; gap: 4px; }
     .tech-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
     .tech-pill { font-size: 12px; font-weight: 700; padding: 5px 12px; border: 2px solid var(--siyah); background: var(--krem); }
   </style>
 </head>
 <body>
-
 <a href="#main-content" class="skip-link">Ana içeriğe geç</a>
-
 <nav id="navbar" role="navigation" aria-label="Ana gezinme">
   <div class="nav-inner">
     <a href="/" class="nav-logo" aria-label="Tuba Çelik ana sayfa">TC ✦</a>
@@ -52,19 +54,12 @@
       <li><a href="/iletisim">İletişim</a></li>
       <li><a href="/en" class="lang-switch" hreflang="en">EN</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menüyü aç" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menüyü aç" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
   <nav id="mobile-menu" aria-label="Mobil gezinme" hidden>
-    <a href="/ne-yapiyorum">Ne Yapıyorum</a>
-    <a href="/projeler">Projeler</a>
-    <a href="/blog">Blog</a>
-    <a href="/dokumanlar">Dokümanlar</a>
-    <a href="/hakkimda">Hakkımda</a>
-    <a href="/yetenekler">Yetenekler</a>
-    <a href="/iletisim">İletişim</a>
-    <a href="/en" class="lang-switch" hreflang="en">EN</a>
+    <a href="/ne-yapiyorum">Ne Yapıyorum</a><a href="/projeler">Projeler</a><a href="/blog">Blog</a>
+    <a href="/dokumanlar">Dokümanlar</a><a href="/hakkimda">Hakkımda</a><a href="/yetenekler">Yetenekler</a>
+    <a href="/iletisim">İletişim</a><a href="/en" class="lang-switch" hreflang="en">EN</a>
   </nav>
 </nav>
 
@@ -72,14 +67,13 @@
 <div class="case-wrap">
 
   <a href="/projeler" class="case-back">← Tüm Projeler</a>
-
   <span class="case-tag">Fine-Tuning Araştırması</span>
-  <h1 class="case-title">Qwen Fine-Tuning Deneyi</h1>
-
+  <h1 class="case-title">Qwen: Büyük Model Küçük Modeli Neden Geçemedi?</h1>
   <div class="case-meta">
     <span>📅 2024</span>
     <span>🏢 Mad Cat Labs</span>
     <span>⏱ 6 hafta</span>
+    <span>📖 <a href="https://medium.com/@tubaacelikk11/why-did-the-largest-model-lose-fine-tuning-4-qwen3-5-variants-for-digital-marketing-bab72bc47b83" target="_blank" rel="noopener noreferrer" style="color:var(--teal);font-weight:700;">Medium'da Oku</a></span>
   </div>
 
   <div class="case-img">
@@ -87,43 +81,105 @@
   </div>
 
   <div class="case-section">
-    <h2>Proje Özeti</h2>
-    <p>Qwen 2B ve 7B modellerini Türkçe talimat takibi ve soru-cevap görevleri için QLoRA yöntemiyle fine-tune ettiğim bir araştırma projesi. Temel soru: küçük modeller, Türkçe NLP görevlerinde büyük modellere ne kadar yaklaşabilir?</p>
-    <p>Farklı learning rate, rank ve epoch kombinasyonlarını sistematik olarak test ederek en iyi hiperparametre konfigürasyonunu belirledim.</p>
-  </div>
-
-  <div class="stat-row">
-    <div class="stat-box"><div class="stat-box-num">2B–7B</div><div class="stat-box-lbl">Model Boyutu</div></div>
-    <div class="stat-box"><div class="stat-box-num">12</div><div class="stat-box-lbl">Deney Konfigürasyonu</div></div>
-    <div class="stat-box"><div class="stat-box-num">%18</div><div class="stat-box-lbl">Baseline Artışı</div></div>
-    <div class="stat-box"><div class="stat-box-num">6 hf</div><div class="stat-box-lbl">Süre</div></div>
+    <h2>Bağlam</h2>
+    <p>MMX projesinde Türkçe pazarlama LLM'i için fine-tuning altyapısı kurulduktan sonra kritik bir soru ortaya çıktı: hangi model boyutu üretim için doğru seçim? Ekip "büyük model daha iyidir" varsayımıyla 27B'ye yöneliyordu, ancak bu varsayım veriye dayalı sorgulanmamıştı.</p>
   </div>
 
   <div class="case-section">
-    <h2>Deney Tasarımı</h2>
+    <h2>Problem</h2>
+    <p>Model boyutu kararı sezgiye dayanıyordu: daha büyük parametre sayısı otomatik olarak daha iyi Türkçe talimat takibi anlamına gelmez. 27B modeli seçip fine-tune etmek hem hesaplama maliyeti hem de deployment karmaşıklığı açısından önemli bir taahhüt demekti; hata yapmak pahalıya patlardı.</p>
+  </div>
+
+  <div class="case-section">
+    <h2>Neden Önemliydi?</h2>
+    <p>Yanlış model seçimi iki yönde maliyetli olabilirdi: çok küçük bir model seçilirse üretim kalitesi yeterli olmaz; çok büyük bir model seçilirse hem eğitim hem de servis maliyeti gereksiz yere artar, gecikme süresi uzar. Doğru kararı verebilmek için deney tasarımı gerekiyordu.</p>
+  </div>
+
+  <div class="case-section">
+    <h2>Ben Neyi Sorguladım?</h2>
+    <p>Varsayımı ters çevirdim: "27B neden kaybediyor?" değil, "27B neden kazanmak zorunda olsun?" Türkçe tokenizasyonun küçük modellerde nasıl farklılaştığını ve ince ayar verisinin boyuta göre nasıl davrandığını araştırdım. Token boşluklarının modelin dilsel sezgisini nasıl etkilediğini mercek altına aldım.</p>
+  </div>
+
+  <div class="case-section">
+    <h2>Teşhis</h2>
+    <p>27B modelin beklentinin altında kalmasının temel nedeni token boşluklarıydı: Türkçe eklentili yapısı nedeniyle büyük modelin tokenizer'ı bazı kelimeleri beklenmedik parçalara böldüğünde bağlam çözülüyordu. Küçük modeller aynı eğitim verisiyle daha tutarlı Türkçe dilbilgisi örüntüleri öğrendi. Bu sonuç beklentilerin tam tersiydi.</p>
+  </div>
+
+  <div class="case-section">
+    <h2>Değerlendirilen Seçenekler</h2>
     <ul>
-      <li>Türkçe talimat veri seti: 15K+ örnek, el ile kalite denetimi uygulandı</li>
-      <li>QLoRA konfigürasyonları: r=8, r=16, r=32 karşılaştırması</li>
-      <li>Learning rate sweep: 1e-4 ile 5e-5 arasında grid search</li>
-      <li>Değerlendirme: MT-Bench benzeri Türkçe soru seti + insan değerlendirmesi</li>
+      <li><strong>Yalnızca 27B (varsayılan plan):</strong> Hesaplama maliyeti yüksek, gecikme uzun ve deney sonuçlarına göre performans avantajı yok.</li>
+      <li><strong>2B, 3B, 7B, 27B karşılaştırması:</strong> Sistematik ama zaman alıcı. Benim önerdiğim yaklaşım buydu.</li>
+      <li><strong>Yalnızca küçük model (2B):</strong> Hızlı ve ucuz ama sınır belirlenebilir mi bilinmiyor.</li>
     </ul>
   </div>
 
   <div class="case-section">
-    <h2>Önemli Bulgular</h2>
-    <p>7B modelin 2B modelden anlamlı şekilde iyi performans gösterdiği, ancak farkın beklentinin altında kaldığı gözlemlendi. r=16 rank konfigürasyonu, kalite ve hesaplama maliyeti dengesinde en iyi sonucu verdi. Eğitim verisinin kalitesinin miktardan daha belirleyici olduğu doğrulandı.</p>
+    <h2>Verdiğim Karar</h2>
+    <p>Dört varyantı sistematik biçimde karşılaştırdım: aynı Türkçe talimat veri setiyle LoRA (sıralı tercih) ve DPO (tercih optimizasyonu) kombinasyonlarını test ettim. Hiperparametre sabitlenerek yalnızca model boyutu değişkeni izolasyonu sağlandı.</p>
   </div>
 
   <div class="case-section">
-    <h2>Kullanılan Teknolojiler</h2>
+    <h2>Uygulama</h2>
+    <ul>
+      <li>15K+ Türkçe talimat-yanıt çifti hazırlandı; kalite denetimi manuel yapıldı</li>
+      <li>Her model için özdeş LoRA konfigürasyonu (r=16) uygulandı</li>
+      <li>DPO aşaması seçilmiş varyantlara eklendi</li>
+      <li>Değerlendirme: Türkçe MT-Bench benzeri soru seti + hakem model skorlaması</li>
+    </ul>
     <div class="tech-pills">
       <span class="tech-pill">Python</span>
       <span class="tech-pill">QLoRA</span>
-      <span class="tech-pill">bitsandbytes</span>
-      <span class="tech-pill">PEFT</span>
       <span class="tech-pill">trl</span>
+      <span class="tech-pill">bitsandbytes</span>
       <span class="tech-pill">Weights &amp; Biases</span>
       <span class="tech-pill">vLLM</span>
+    </div>
+  </div>
+
+  <div class="case-section">
+    <h2>Ölçüm Yöntemi</h2>
+    <p>Her model, aynı 200+ soruluk Türkçe benchmark'ta çalıştırıldı. Çıktılar hakem model (GPT-4o) tarafından 1–10 arası puanlandı; kategorilere göre de ayrıştırıldı (yaratıcı yazarlık, talimat takibi, dilbilgisi).</p>
+  </div>
+
+  <div class="case-section">
+    <h2>Sonuç</h2>
+    <div class="stat-row">
+      <div class="stat-box"><div class="stat-box-num">4</div><div class="stat-box-lbl">Karşılaştırılan Varyant</div></div>
+      <div class="stat-box"><div class="stat-box-num">27B</div><div class="stat-box-lbl">Beklentinin Altında Kaldı</div></div>
+      <div class="stat-box"><div class="stat-box-num">2K+</div><div class="stat-box-lbl">Medium Görüntülenme</div></div>
+    </div>
+    <p>27B modeli beklentinin altında kaldı; token boşluklarının oluşturduğu bağlam kayıpları Türkçe talimat takibini bozuyordu. Üretim kararı bu analize dayandırıldı.</p>
+    <div class="todo-box">
+      <strong>TODO</strong>
+      <ul>
+        <li>Hangi model boyutu üretim için seçildi? 7B mi?</li>
+        <li>Seçilen modelin hakem puanı neydi (başlangıç ve fine-tuning sonrası)?</li>
+        <li>Bu karar gerçekten üretime yansıdı mı?</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr class="case-divider" />
+
+  <div class="case-section">
+    <h2>Sınırlamalar</h2>
+    <ul>
+      <li>Hakem model değerlendirmesi insan tercihiyle %85 oranında örtüşüyor; mükemmel ölçüm değil.</li>
+      <li>Token boşluğu hipotezi test edildi ancak resmi ablasyon çalışması yapılmadı.</li>
+      <li>Sonuçlar Türkçe pazarlama alanına özgü; başka dil veya alanlara genelleştirilmemeli.</li>
+    </ul>
+  </div>
+
+  <div class="case-section">
+    <h2>Öğrendiklerim</h2>
+    <p>Model boyutu tek başına performans göstergesi değil. Tokenizasyon kararları, özellikle eklentili dillerde, fine-tuning sonucunu büyük ölçüde belirliyor. Bu deney bana "daha büyük" kararını veriden bağımsız vermenin riskini somut olarak gösterdi ve o tarihten bu yana model seçimlerinde tokenizasyon analizini her zaman ilk adıma alıyorum.</p>
+    <div class="todo-box">
+      <strong>TODO</strong>
+      <ul>
+        <li>Bugün bu deneyi yeniden tasarlasaydın ne değiştirirdin?</li>
+        <li>Token boşluğunu çözmek için başka ne denendi veya denenebilirdi?</li>
+      </ul>
     </div>
   </div>
 
@@ -136,9 +192,9 @@
       <div class="footer-logo">Tuba <span>Çelik</span></div>
       <div class="footer-role">Data &amp; AI Associate</div>
     </div>
-    <nav class="social-links" aria-label="Sosyal medya bağlantıları">
-      <a href="https://github.com/tubaacelik" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
-      <a href="https://www.linkedin.com/in/tuba-%C3%A7elik/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+    <nav class="social-links" aria-label="Sosyal medya">
+      <a href="https://github.com/tubaacelik" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
+      <a href="https://www.linkedin.com/in/tuba-%C3%A7elik/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
     </nav>
     <div style="text-align:center;">
       <p class="footer-copy">© 2026 Tuba Çelik</p>
@@ -150,23 +206,17 @@
 <script>
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
-  function closeMenu() {
-    mobileMenu.hidden = true; mobileMenu.style.display = 'none';
-    hamburger.setAttribute('aria-expanded', 'false');
-  }
+  function closeMenu() { mobileMenu.hidden = true; mobileMenu.style.display = 'none'; hamburger.setAttribute('aria-expanded', 'false'); }
   hamburger.addEventListener('click', () => {
     const isOpen = !mobileMenu.hidden;
     if (isOpen) { closeMenu(); } else {
       mobileMenu.hidden = false; mobileMenu.style.display = 'flex';
       hamburger.setAttribute('aria-expanded', 'true');
-      const firstLink = mobileMenu.querySelector('a');
-      if (firstLink) firstLink.focus();
+      const firstLink = mobileMenu.querySelector('a'); if (firstLink) firstLink.focus();
     }
   });
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-  document.addEventListener('click', e => {
-    if (!mobileMenu.hidden && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
-  });
+  document.addEventListener('click', e => { if (!mobileMenu.hidden && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) closeMenu(); });
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   function checkNav() {
     const links = document.getElementById('nav-links-desktop');
