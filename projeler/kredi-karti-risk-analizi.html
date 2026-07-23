@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kredi Kartı Risk Analizi | Tuba Çelik</title>
+  <meta name="description" content="Kredi kartı işlem verileri üzerinde makine öğrenmesi ile risk skorlama: veri ön işleme, model seçimi ve gerçek zamanlı skorlama altyapısı." />
+  <link rel="canonical" href="https://tubacelik.co/projeler/kredi-karti-risk-analizi" />
+  <meta property="og:title" content="Kredi Kartı Risk Analizi | Tuba Çelik" />
+  <meta property="og:description" content="Kredi kartı işlem verileri üzerinde makine öğrenmesi ile risk skorlama." />
+  <meta property="og:url" content="https://tubacelik.co/projeler/kredi-karti-risk-analizi" />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .case-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 80px; }
+    .case-back { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: var(--siyah); text-decoration: none; margin-bottom: 32px; border: 2px solid var(--siyah); padding: 8px 16px; box-shadow: 3px 3px 0 var(--siyah); transition: box-shadow .15s, transform .15s; }
+    .case-back:hover { box-shadow: none; transform: translate(3px,3px); }
+    .case-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; background: var(--sari); color: var(--siyah); padding: 4px 12px; border: 2px solid var(--siyah); margin-bottom: 16px; }
+    .case-title { font-size: clamp(28px,5vw,48px); font-weight: 900; line-height: 1.1; letter-spacing: -.03em; text-transform: uppercase; margin-bottom: 24px; }
+    .case-meta { display: flex; gap: 24px; flex-wrap: wrap; font-size: 13px; color: #5a5550; font-weight: 600; margin-bottom: 40px; padding-bottom: 32px; border-bottom: 3px solid var(--siyah); }
+    .case-img { width: 100%; aspect-ratio: 16/9; border: 3px solid var(--siyah); box-shadow: 6px 6px 0 var(--siyah); margin-bottom: 48px; overflow: hidden; }
+    .case-img img { width: 100%; height: 100%; object-fit: cover; }
+    .case-section { margin-bottom: 40px; }
+    .case-section h2 { font-size: 20px; font-weight: 900; text-transform: uppercase; letter-spacing: -.02em; margin-bottom: 16px; padding-left: 12px; border-left: 4px solid var(--sari); }
+    .case-section p { font-size: 16px; line-height: 1.75; color: #2a2520; margin-bottom: 12px; }
+    .case-section ul { padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 1.65; color: #2a2520; }
+    .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin: 24px 0; }
+    .stat-box { border: 3px solid var(--siyah); padding: 20px 16px; box-shadow: 4px 4px 0 var(--siyah); text-align: center; }
+    .stat-box-num { font-size: 32px; font-weight: 900; color: #c9a200; line-height: 1; }
+    .stat-box-lbl { font-size: 12px; font-weight: 700; color: #5a5550; text-transform: uppercase; letter-spacing: .06em; margin-top: 6px; }
+    .tech-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .tech-pill { font-size: 12px; font-weight: 700; padding: 5px 12px; border: 2px solid var(--siyah); background: var(--krem); }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Ana içeriğe geç</a>
+
+<nav id="navbar" role="navigation" aria-label="Ana gezinme">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Tuba Çelik ana sayfa">TC ✦</a>
+    <ul class="nav-links" id="nav-links-desktop">
+      <li><a href="/ne-yapiyorum">Ne Yapıyorum</a></li>
+      <li><a href="/projeler" aria-current="page">Projeler</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/dokumanlar">Dokümanlar</a></li>
+      <li><a href="/hakkimda">Hakkımda</a></li>
+      <li><a href="/yetenekler">Yetenekler</a></li>
+      <li><a href="/iletisim">İletişim</a></li>
+      <li><a href="/en" class="lang-switch" hreflang="en">EN</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menüyü aç" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav id="mobile-menu" aria-label="Mobil gezinme" hidden>
+    <a href="/ne-yapiyorum">Ne Yapıyorum</a>
+    <a href="/projeler">Projeler</a>
+    <a href="/blog">Blog</a>
+    <a href="/dokumanlar">Dokümanlar</a>
+    <a href="/hakkimda">Hakkımda</a>
+    <a href="/yetenekler">Yetenekler</a>
+    <a href="/iletisim">İletişim</a>
+    <a href="/en" class="lang-switch" hreflang="en">EN</a>
+  </nav>
+</nav>
+
+<main id="main-content">
+<div class="case-wrap">
+
+  <a href="/projeler" class="case-back">← Tüm Projeler</a>
+
+  <span class="case-tag">Makine Öğrenmesi</span>
+  <h1 class="case-title">Kredi Kartı Risk Analizi</h1>
+
+  <div class="case-meta">
+    <span>📅 2023</span>
+    <span>🎓 Kaggle Projesi</span>
+    <span>⏱ 4 hafta</span>
+  </div>
+
+  <div class="case-img">
+    <img src="../images/proje-kredikarti.png" alt="Kredi kartı risk analizi model performans grafikleri" loading="lazy" decoding="async" width="760" height="427" />
+  </div>
+
+  <div class="case-section">
+    <h2>Proje Özeti</h2>
+    <p>Kredi kartı başvurularında risk tahmini için bir makine öğrenmesi modeli geliştirdim. Dengesiz sınıf dağılımı (fraud/non-fraud oranı) ve veri gizliliği kısıtlamaları bu projenin temel zorluklarıydı.</p>
+    <p>Farklı örnekleme teknikleri ve model algoritmalarını karşılaştırarak en iyi precision-recall dengesini bulmayı hedefledim.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-box"><div class="stat-box-num">%92</div><div class="stat-box-lbl">AUC-ROC</div></div>
+    <div class="stat-box"><div class="stat-box-num">284K</div><div class="stat-box-lbl">İşlem Kaydı</div></div>
+    <div class="stat-box"><div class="stat-box-num">5</div><div class="stat-box-lbl">Model Karşılaştırması</div></div>
+    <div class="stat-box"><div class="stat-box-num">%0.17</div><div class="stat-box-lbl">Fraud Oranı</div></div>
+  </div>
+
+  <div class="case-section">
+    <h2>Teknik Yaklaşım</h2>
+    <ul>
+      <li>Dengesiz veri: SMOTE ve class_weight='balanced' ile örnekleme stratejisi</li>
+      <li>Model karşılaştırması: Logistic Regression, Random Forest, XGBoost, LightGBM, CatBoost</li>
+      <li>Hiperparametre optimizasyonu: Optuna ile bayesian search</li>
+      <li>Threshold tuning: precision-recall eğrisi analizi ile optimal eşik belirleme</li>
+    </ul>
+  </div>
+
+  <div class="case-section">
+    <h2>Sonuçlar</h2>
+    <p>LightGBM, hem AUC-ROC (%92) hem de eğitim hızı açısından en iyi performansı gösterdi. Threshold 0.5 yerine 0.3 olarak ayarlandığında recall %15 arttı; bu ayar fraud tespitinde daha kritik. Model, Kaggle notebook olarak paylaşıldı ve 100+ upvote aldı.</p>
+  </div>
+
+  <div class="case-section">
+    <h2>Kullanılan Teknolojiler</h2>
+    <div class="tech-pills">
+      <span class="tech-pill">Python</span>
+      <span class="tech-pill">scikit-learn</span>
+      <span class="tech-pill">LightGBM</span>
+      <span class="tech-pill">XGBoost</span>
+      <span class="tech-pill">imbalanced-learn</span>
+      <span class="tech-pill">Optuna</span>
+      <span class="tech-pill">matplotlib</span>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Tuba <span>Çelik</span></div>
+      <div class="footer-role">Data &amp; AI Associate</div>
+    </div>
+    <nav class="social-links" aria-label="Sosyal medya bağlantıları">
+      <a href="https://github.com/tubaacelik" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
+      <a href="https://www.kaggle.com/tubacelikk1" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Kaggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.825 23.859c-.022.092-.117.141-.281.141h-3.139c-.187 0-.351-.082-.492-.248l-5.178-6.589-1.448 1.374v5.111c0 .235-.117.352-.351.352H5.505c-.236 0-.354-.117-.354-.352V.353c0-.233.118-.353.354-.353h2.431c.234 0 .351.12.351.353v14.343l6.203-6.272c.165-.165.33-.246.495-.246h3.239c.144 0 .236.06.285.18.046.149.034.255-.036.315l-6.555 6.344 6.836 8.507c.095.104.117.208.07.334z"/></svg> Kaggle</a>
+      <a href="https://www.linkedin.com/in/tuba-%C3%A7elik/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+    </nav>
+    <div style="text-align:center;">
+      <p class="footer-copy">© 2026 Tuba Çelik</p>
+      <a href="/gizlilik" style="font-size:12px;color:#7a7065;font-weight:600;text-decoration:underline;">Gizlilik Politikası</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  function closeMenu() {
+    mobileMenu.hidden = true; mobileMenu.style.display = 'none';
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+  hamburger.addEventListener('click', () => {
+    const isOpen = !mobileMenu.hidden;
+    if (isOpen) { closeMenu(); } else {
+      mobileMenu.hidden = false; mobileMenu.style.display = 'flex';
+      hamburger.setAttribute('aria-expanded', 'true');
+      const firstLink = mobileMenu.querySelector('a');
+      if (firstLink) firstLink.focus();
+    }
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  document.addEventListener('click', e => {
+    if (!mobileMenu.hidden && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  function checkNav() {
+    const links = document.getElementById('nav-links-desktop');
+    if (window.innerWidth < 640) { links.style.display = 'none'; hamburger.style.display = 'flex'; }
+    else { links.style.display = 'flex'; hamburger.style.display = 'none'; closeMenu(); }
+  }
+  checkNav(); window.addEventListener('resize', checkNav);
+</script>
+</body>
+</html>

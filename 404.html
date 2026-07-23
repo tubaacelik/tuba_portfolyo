@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sayfa Bulunamadı | Tuba Çelik</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .error-wrap {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+    }
+    .error-inner {
+      max-width: 560px;
+      text-align: center;
+    }
+    .error-code {
+      font-size: clamp(80px, 15vw, 140px);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.05em;
+      color: var(--siyah);
+      position: relative;
+      display: inline-block;
+    }
+    .error-code span { color: var(--pembe); }
+    .error-title {
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 900;
+      margin: 20px 0 14px;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+    }
+    .error-desc {
+      font-size: 16px;
+      color: #3a3530;
+      line-height: 1.65;
+      margin-bottom: 32px;
+    }
+    .error-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Ana içeriğe geç</a>
+
+<nav id="navbar" role="navigation" aria-label="Ana gezinme">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Tuba Çelik ana sayfa">TC ✦</a>
+    <ul class="nav-links" id="nav-links-desktop">
+      <li><a href="/ne-yapiyorum">Ne Yapıyorum</a></li>
+      <li><a href="/projeler">Projeler</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/dokumanlar">Dokümanlar</a></li>
+      <li><a href="/hakkimda">Hakkımda</a></li>
+      <li><a href="/yetenekler">Yetenekler</a></li>
+      <li><a href="/iletisim">İletişim</a></li>
+      <li><a href="/en" class="lang-switch" hreflang="en">EN</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menüyü aç" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav id="mobile-menu" aria-label="Mobil gezinme" hidden>
+    <a href="/ne-yapiyorum">Ne Yapıyorum</a>
+    <a href="/projeler">Projeler</a>
+    <a href="/blog">Blog</a>
+    <a href="/dokumanlar">Dokümanlar</a>
+    <a href="/hakkimda">Hakkımda</a>
+    <a href="/yetenekler">Yetenekler</a>
+    <a href="/iletisim">İletişim</a>
+    <a href="/en" class="lang-switch" hreflang="en">EN</a>
+  </nav>
+</nav>
+
+<main id="main-content">
+  <div class="error-wrap">
+    <div class="error-inner">
+      <p class="error-code">4<span>0</span>4</p>
+      <h1 class="error-title">Sayfa Bulunamadı</h1>
+      <p class="error-desc">
+        Aradığın sayfa taşınmış, silinmiş ya da hiç var olmamış olabilir.
+        Ama merak etme, doğru yerdesin.
+      </p>
+      <div class="error-btns">
+        <a href="/" class="btn btn-primary">Ana Sayfaya Dön →</a>
+        <a href="/projeler" class="btn btn-secondary">Projelere Git</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Tuba <span>Çelik</span></div>
+      <div class="footer-role">Data &amp; AI Associate</div>
+    </div>
+    <p class="footer-copy">© 2026 Tuba Çelik</p>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  function closeMenu() {
+    mobileMenu.hidden = true; mobileMenu.style.display = 'none';
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+  hamburger.addEventListener('click', () => {
+    const isOpen = !mobileMenu.hidden;
+    if (isOpen) { closeMenu(); } else {
+      mobileMenu.hidden = false; mobileMenu.style.display = 'flex';
+      hamburger.setAttribute('aria-expanded', 'true');
+    }
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  document.addEventListener('click', e => {
+    if (!mobileMenu.hidden && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  function checkNav() {
+    const links = document.getElementById('nav-links-desktop');
+    if (window.innerWidth < 640) { links.style.display = 'none'; hamburger.style.display = 'flex'; }
+    else { links.style.display = 'flex'; hamburger.style.display = 'none'; closeMenu(); }
+  }
+  checkNav(); window.addEventListener('resize', checkNav);
+</script>
+</body>
+</html>

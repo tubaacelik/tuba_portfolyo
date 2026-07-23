@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>İletişim | Tuba Çelik</title>
   <meta name="description" content="Tuba Çelik ile iletişime geçin. Proje iş birlikleri, sorular ve merhaba için." />
+  <link rel="canonical" href="https://tubacelik.co/iletisim" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tubacelik.co/iletisim" />
+  <meta property="og:title" content="İletişim | Tuba Çelik" />
+  <meta property="og:description" content="Tuba Çelik ile iletişime geçin. Proje iş birlikleri ve sorular için." />
+  <link rel="alternate" hreflang="tr" href="https://tubacelik.co/iletisim" />
+  <link rel="alternate" hreflang="x-default" href="https://tubacelik.co/iletisim" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;800;900&display=swap" rel="stylesheet" />
@@ -12,17 +19,18 @@
 </head>
 <body>
 
+<a href="#main-content" class="skip-link">Ana içeriğe geç</a>
 <nav id="navbar" role="navigation" aria-label="Ana gezinme">
   <div class="nav-inner">
     <a href="/" class="nav-logo">TC ✦</a>
     <ul class="nav-links" id="nav-links-desktop">
-      <li><a href="/ne-yapiyorum" target="_blank" rel="noopener noreferrer">Ne Yapıyorum</a></li>
-      <li><a href="/projeler" target="_blank" rel="noopener noreferrer">Projeler</a></li>
-      <li><a href="/blog" target="_blank" rel="noopener noreferrer">Blog</a></li>
-      <li><a href="/dokumanlar" target="_blank" rel="noopener noreferrer">Dokümanlar</a></li>
-      <li><a href="/hakkimda" target="_blank" rel="noopener noreferrer">Hakkımda</a></li>
-      <li><a href="/yetenekler" target="_blank" rel="noopener noreferrer">Yetenekler</a></li>
-      <li><a href="/iletisim" class="active" target="_blank" rel="noopener noreferrer">İletişim</a></li>
+      <li><a href="/ne-yapiyorum">Ne Yapıyorum</a></li>
+      <li><a href="/projeler">Projeler</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/dokumanlar">Dokümanlar</a></li>
+      <li><a href="/hakkimda">Hakkımda</a></li>
+      <li><a href="/yetenekler">Yetenekler</a></li>
+      <li><a href="/iletisim" class="active">İletişim</a></li>
       <li><a href="/en/contact" class="lang-switch">EN</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menüyü aç" aria-expanded="false">
@@ -30,17 +38,19 @@
     </button>
   </div>
   <nav id="mobile-menu" aria-label="Mobil gezinme" hidden>
-    <a href="/ne-yapiyorum" target="_blank" rel="noopener noreferrer">Ne Yapıyorum</a>
-    <a href="/projeler" target="_blank" rel="noopener noreferrer">Projeler</a>
-    <a href="/blog" target="_blank" rel="noopener noreferrer">Blog</a>
-    <a href="/dokumanlar" target="_blank" rel="noopener noreferrer">Dokümanlar</a>
-    <a href="/hakkimda" target="_blank" rel="noopener noreferrer">Hakkımda</a>
-    <a href="/yetenekler" target="_blank" rel="noopener noreferrer">Yetenekler</a>
-    <a href="/iletisim" class="active" target="_blank" rel="noopener noreferrer">İletişim</a>
+    <a href="/ne-yapiyorum">Ne Yapıyorum</a>
+    <a href="/projeler">Projeler</a>
+    <a href="/blog">Blog</a>
+    <a href="/dokumanlar">Dokümanlar</a>
+    <a href="/hakkimda">Hakkımda</a>
+    <a href="/yetenekler">Yetenekler</a>
+    <a href="/iletisim" class="active">İletişim</a>
     <a href="/en/contact" class="lang-switch">EN</a>
   </nav>
 </nav>
 
+
+<main id="main-content">
 <section id="iletisim" aria-label="İletişim formu">
   <div class="iletisim-inner fade-in">
     <span class="section-label" style="background:var(--sari);color:var(--siyah);">İletişim</span>
@@ -50,11 +60,38 @@
       Yazmaktan çekinme.
     </p>
 
-    <form class="contact-form" action="https://formspree.io/f/tubacelikk11@gmail.com" method="POST" aria-label="İletişim formu">
-      <input type="text" name="name" placeholder="Adın" required aria-label="Adın" />
-      <input type="email" name="email" placeholder="E-posta adresin" required aria-label="E-posta adresin" />
-      <textarea name="message" placeholder="Mesajın..." required aria-label="Mesajın"></textarea>
-      <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Gönder →</button>
+    <!-- TODO_FORMSPREE_FORM_ID: Formspree'de hesap aç, form oluştur, ID'yi action'a yaz -->
+    <!-- Örnek: action="https://formspree.io/f/xrgjakbp" -->
+    <form
+      class="contact-form"
+      id="contact-form"
+      action="https://formspree.io/f/TODO_FORMSPREE_FORM_ID"
+      method="POST"
+      aria-label="İletişim formu"
+      novalidate
+    >
+      <input type="text" name="_gotcha" style="display:none;" tabindex="-1" autocomplete="off" />
+
+      <div class="form-field">
+        <label for="contact-name">Ad Soyad <span aria-hidden="true">*</span></label>
+        <input type="text" id="contact-name" name="name" placeholder="Adın ve soyadın"
+               required autocomplete="name" aria-required="true" />
+      </div>
+
+      <div class="form-field">
+        <label for="contact-email">E-posta <span aria-hidden="true">*</span></label>
+        <input type="email" id="contact-email" name="email" placeholder="ornek@email.com"
+               required autocomplete="email" aria-required="true" />
+      </div>
+
+      <div class="form-field">
+        <label for="contact-message">Mesaj <span aria-hidden="true">*</span></label>
+        <textarea id="contact-message" name="message" placeholder="Mesajını buraya yaz..."
+                  required aria-required="true"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary" id="submit-btn" style="align-self:flex-start;">Gönder →</button>
+      <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
     </form>
 
     <div class="or-divider" aria-hidden="true">ya da</div>
@@ -65,6 +102,8 @@
     </a>
   </div>
 </section>
+
+</main>
 
 <footer role="contentinfo" style="background:#2a2520;border-top:3px solid #3a3530;">
   <div class="footer-inner">
@@ -87,39 +126,74 @@
 <script>
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
+  function closeMenu() {
+    mobileMenu.hidden = true; mobileMenu.style.display = 'none';
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
   hamburger.addEventListener('click', () => {
     const isOpen = !mobileMenu.hidden;
-    mobileMenu.hidden = isOpen;
-    mobileMenu.style.display = isOpen ? 'none' : 'flex';
-    hamburger.setAttribute('aria-expanded', String(!isOpen));
+    if (isOpen) { closeMenu(); } else {
+      mobileMenu.hidden = false; mobileMenu.style.display = 'flex';
+      hamburger.setAttribute('aria-expanded', 'true');
+      const firstLink = mobileMenu.querySelector('a');
+      if (firstLink) firstLink.focus();
+    }
   });
-  mobileMenu.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      mobileMenu.hidden = true;
-      mobileMenu.style.display = 'none';
-      hamburger.setAttribute('aria-expanded', 'false');
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  document.addEventListener('click', e => {
+    if (!mobileMenu.hidden && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) closeMenu();
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      const status = document.getElementById('form-status');
+      btn.disabled = true;
+      btn.textContent = 'Gönderiliyor...';
+      status.className = 'form-status';
+      status.textContent = '';
+      try {
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { Accept: 'application/json' }
+        });
+        if (res.ok) {
+          status.className = 'form-status success';
+          status.textContent = 'Mesajın ulaştı! En kısa sürede geri döneceğim.';
+          contactForm.reset();
+        } else {
+          throw new Error('sunucu hatası');
+        }
+      } catch {
+        status.className = 'form-status error';
+        status.textContent = 'Bir hata oluştu. Lütfen e-posta ile ulaş: tubacelikk11@gmail.com';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Gönder →';
+      }
     });
-  });
+  }
+
   function checkNav() {
     const links = document.getElementById('nav-links-desktop');
-    if (window.innerWidth < 640) {
-      links.style.display = 'none';
-      hamburger.style.display = 'flex';
-    } else {
-      links.style.display = 'flex';
-      hamburger.style.display = 'none';
-      mobileMenu.hidden = true;
-      mobileMenu.style.display = 'none';
-    }
+    if (window.innerWidth < 640) { links.style.display = 'none'; hamburger.style.display = 'flex'; }
+    else { links.style.display = 'flex'; hamburger.style.display = 'none'; closeMenu(); }
   }
   checkNav();
   window.addEventListener('resize', checkNav);
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!prefersReduced) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  } else {
+    document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+  }
 </script>
 </body>
 </html>

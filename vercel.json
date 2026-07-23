@@ -7,7 +7,32 @@
   "rewrites": [
     { "source": "/dokumanlar", "destination": "/dokumanlar.html" },
     { "source": "/dokumanlar/:slug", "destination": "/dokumanlar/:slug.html" },
+    { "source": "/gizlilik", "destination": "/gizlilik.html" },
+    { "source": "/projeler/:slug", "destination": "/projeler/:slug.html" },
     { "source": "/en/documents", "destination": "/en/documents.html" },
     { "source": "/en/documents/:slug", "destination": "/en/documents/:slug.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/style.css",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    }
   ]
 }
