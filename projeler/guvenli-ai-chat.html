@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Türkçe PII Korumalı Güvenli AI Chat | Tuba Çelik</title>
+  <meta name="description" content="Türkçe kişisel verileri model çağrısından önce koruyan, şifreli Token Vault ve insan onaylı işlemler içeren güvenli AI chat MVP vaka çalışması." />
+  <link rel="canonical" href="https://tubacelik.co/projeler/guvenli-ai-chat" />
+  <meta property="og:title" content="Türkçe PII Korumalı Güvenli AI Chat | Tuba Çelik" />
+  <meta property="og:description" content="Türkçe kişisel verileri model çağrısından önce koruyan, şifreli Token Vault ve insan onaylı işlemler içeren güvenli AI chat MVP vaka çalışması." />
+  <meta property="og:url" content="https://tubacelik.co/projeler/guvenli-ai-chat" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Türkçe PII Korumalı Güvenli AI Chat | Tuba Çelik" />
+  <meta name="twitter:description" content="Türkçe PII tespiti, şifreli Token Vault ve human-in-the-loop işlemler içeren yerel güvenli AI chat MVP." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .case-wrap { max-width: 760px; margin: 0 auto; padding: 60px 24px 80px; }
+    .case-back { display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 700; color: var(--siyah); text-decoration: none; margin-bottom: 32px; border: 2px solid var(--siyah); padding: 8px 16px; box-shadow: 3px 3px 0 var(--siyah); transition: box-shadow .15s, transform .15s; }
+    .case-back:hover { box-shadow: none; transform: translate(3px,3px); }
+    .case-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; background: var(--teal); color: #fff; padding: 4px 12px; border: 2px solid var(--siyah); margin-bottom: 16px; }
+    .case-title { font-size: clamp(22px,4.5vw,40px); font-weight: 900; line-height: 1.1; letter-spacing: -.03em; text-transform: uppercase; margin-bottom: 16px; }
+    .case-subtitle { font-size: 17px; color: #3a3530; line-height: 1.6; margin-bottom: 28px; font-weight: 500; }
+    .case-meta { display: flex; gap: 24px; flex-wrap: wrap; font-size: 13px; color: #5a5550; font-weight: 600; margin-bottom: 40px; padding-bottom: 32px; border-bottom: 3px solid var(--siyah); }
+    .case-meta-item strong { display: block; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); margin-bottom: 3px; }
+    .case-img { width: 100%; border: 3px solid var(--siyah); box-shadow: 6px 6px 0 var(--siyah); margin-bottom: 48px; overflow: hidden; background: #f0ebe3; }
+    .case-img img { width: 100%; height: auto; display: block; }
+    .case-section { margin-bottom: 36px; }
+    .case-section h2 { font-size: 13px; font-weight: 900; text-transform: uppercase; letter-spacing: .1em; color: var(--teal); margin-bottom: 10px; border-left: 4px solid var(--teal); padding-left: 12px; }
+    .case-section p { font-size: 16px; line-height: 1.78; color: #2a2520; margin-bottom: 12px; }
+    .case-section ul { padding-left: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.65; color: #2a2520; }
+    .case-section ul li { padding-left: 4px; }
+    .case-divider { border: none; border-top: 2px solid #e8e2d8; margin: 40px 0; }
+    .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 14px; margin: 28px 0; }
+    .stat-box { border: 3px solid var(--siyah); padding: 18px 14px; box-shadow: 4px 4px 0 var(--siyah); text-align: center; }
+    .stat-box-num { font-size: 26px; font-weight: 900; color: var(--teal); line-height: 1; }
+    .stat-box-lbl { font-size: 11px; font-weight: 700; color: #5a5550; text-transform: uppercase; letter-spacing: .06em; margin-top: 6px; }
+    .tech-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .tech-pill { font-size: 12px; font-weight: 700; padding: 5px 12px; border: 2px solid var(--siyah); background: var(--krem); }
+    .sinir-box { background: #fffbe6; border: 2px solid #c9a200; padding: 20px 24px; margin-top: 12px; }
+    .sinir-box strong { display: block; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #c9a200; margin-bottom: 12px; }
+    .sinir-box ul { padding-left: 18px; margin: 0; display: flex; flex-direction: column; gap: 6px; font-size: 15px; color: #5a4800; }
+    .test-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 14px; }
+    .test-table th { background: var(--siyah); color: var(--krem); padding: 10px 14px; text-align: left; font-weight: 800; letter-spacing: .05em; }
+    .test-table td { padding: 10px 14px; border-bottom: 1px solid #e8e2d8; vertical-align: top; }
+    .test-table tr:nth-child(even) td { background: #f8f5f0; }
+    .test-table .sonuc-ok { color: #166534; font-weight: 700; }
+    .test-table .sonuc-warn { color: #92400e; font-weight: 700; }
+    .mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+    .mode-card { border: 3px solid var(--siyah); padding: 20px; box-shadow: 4px 4px 0 var(--siyah); }
+    .mode-card-title { font-size: 12px; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; color: var(--teal); margin-bottom: 10px; }
+    @media (max-width: 600px) {
+      .mode-grid { grid-template-columns: 1fr; }
+      .stat-row { grid-template-columns: repeat(2, 1fr); }
+      .test-table { font-size: 13px; }
+      .test-table th, .test-table td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Ana içeriğe geç</a>
+<nav id="navbar" role="navigation" aria-label="Ana gezinme">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Tuba Çelik ana sayfa">TC ✦</a>
+    <ul class="nav-links" id="nav-links-desktop">
+      <li><a href="/ne-yapiyorum">Ne Yapıyorum</a></li>
+      <li><a href="/projeler" aria-current="page">Projeler</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/dokumanlar">Dokümanlar</a></li>
+      <li><a href="/hakkimda">Hakkımda</a></li>
+      <li><a href="/yetenekler">Yetenekler</a></li>
+      <li><a href="/iletisim">İletişim</a></li>
+      <li><a href="/en" class="lang-switch" hreflang="en">EN</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menüyü aç" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <nav id="mobile-menu" aria-label="Mobil gezinme" hidden>
+    <a href="/ne-yapiyorum">Ne Yapıyorum</a>
+    <a href="/projeler">Projeler</a>
+    <a href="/blog">Blog</a>
+    <a href="/dokumanlar">Dokümanlar</a>
+    <a href="/hakkimda">Hakkımda</a>
+    <a href="/yetenekler">Yetenekler</a>
+    <a href="/iletisim">İletişim</a>
+    <a href="/en" class="lang-switch" hreflang="en">EN</a>
+  </nav>
+</nav>
+
+<main id="main-content">
+<div class="case-wrap">
+
+  <a href="/projeler" class="case-back">← Tüm Projeler</a>
+
+  <span class="case-tag">Güvenlik · PII · Yerel MVP</span>
+  <h1 class="case-title">Türkçe Kişisel Verileri Modelden Önce Koruyan Bir AI Chat Nasıl Tasarlanır?</h1>
+  <p class="case-subtitle">Türkçe PII tespiti, şifreli Token Vault ve insan onaylı işlemler içeren güvenli AI chat MVP vaka çalışması.</p>
+
+  <div class="case-meta" role="list">
+    <div class="case-meta-item" role="listitem"><strong>Proje Türü</strong>Kişisel güvenlik ve AI altyapısı projesi</div>
+    <div class="case-meta-item" role="listitem"><strong>Durum</strong>Yerel MVP tamamlandı</div>
+    <div class="case-meta-item" role="listitem"><strong>Veri</strong>Sentetik test verisi</div>
+    <div class="case-meta-item" role="listitem"><strong>Rolüm</strong>Araştırma, güvenlik mimarisi, uygulama ve uçtan uca doğrulama</div>
+    <div class="case-meta-item" role="listitem"><strong>Odak</strong>Türkçe PII tespiti, tokenizasyon, şifreli saklama, human-in-the-loop</div>
+    <div class="case-meta-item" role="listitem"><strong>Teknolojiler</strong>Next.js, PostgreSQL, spaCy, tr_core_news_trf, Token Vault, same-origin proxy</div>
+  </div>
+
+  <div class="case-img">
+    <img src="../images/proje-guvenli-chat.svg"
+         alt="Türkçe kişisel verilerin tespit, tokenizasyon, şifreli Vault ve kullanıcı onayı katmanlarından geçtiği Güvenli AI Chat veri akışı"
+         width="760"
+         height="476"
+         loading="eager"
+         decoding="async" />
+  </div>
+
+  <!-- 1. PROBLEM -->
+  <section class="case-section" aria-label="Problem">
+    <h2>1. Problem</h2>
+    <p>Bir kullanıcı AI chat uygulamasına sipariş durumunu sormak veya bir işlem gerçekleştirmek için kişisel bilgilerini yazabilir. Bu mesaj doğrudan modele veya harici bir API'ye gönderildiğinde TCKN, IBAN, telefon, adres, e-posta veya sipariş bilgileri sistem sınırlarının dışına çıkabilir.</p>
+    <p>Başlangıç sorum şuydu: Bir chat sistemi, kullanıcı deneyimini tamamen bozmadan Türkçe kişisel verileri model çağrısından önce nasıl koruyabilir ve geri döndürülemez işlemleri nasıl insan kontrolünde tutabilir?</p>
+  </section>
+
+  <hr class="case-divider" />
+
+  <!-- 2. NEDEN YALNIZCA MASKELEME YETERLİ DEĞİLDİ -->
+  <section class="case-section" aria-label="Neden maskeleme yeterli değildi">
+    <h2>2. Neden Yalnızca Maskeleme Yeterli Değildi?</h2>
+    <p>İlk bakışta çözüm hassas verileri yıldız karakterleriyle kapatmak gibi görünüyordu. Ancak bazı kullanım senaryolarında sistemin işlem tamamlandıktan sonra gerçek değere yetkili biçimde yeniden ulaşması gerekiyordu. Bu durum, geri döndürülemez maskeleme ile güvenli ve geri döndürülebilir tokenizasyonu birbirinden ayırmayı gerektirdi.</p>
+    <p>Ayrıca kişisel verinin mesaj metninden çıkarılması tek başına yeterli değildi. Token eşleşmesinin nerede saklandığı, frontend'in bu eşleşmeye erişip erişemediği, tarayıcı storage'ında iz kalıp kalmadığı ve backend hatalarının sistem ayrıntılarını sızdırıp sızdırmadığı da kontrol edilmeliydi.</p>
+  </section>
+
+  <hr class="case-divider" />
+
+  <!-- 3. BEN NEYİ SORGULADIM -->
+  <section class="case-section" aria-label="Sorgulanan güvenlik varsayımları">
+    <h2>3. Ben Neyi Sorguladım?</h2>
+    <p>Bir tokenizasyon endpoint'inin 200 cevabı vermesi sistemin güvenli olduğu anlamına gelmiyordu. Korunan metin doğru görünürken gerçek değer başka bir API alanında, console çıktısında, storage kaydında veya network cevabında sızabilirdi.</p>
+    <p>Bu nedenle sistemi yalnızca fonksiyonel çıktılar üzerinden değil, verinin geçtiği bütün sınırlar üzerinden test ettim. Görünür DOM, frontend cevapları, console, local storage, session storage, IndexedDB ve browser network trafiğini ayrı ayrı inceledim.</p>
+  </section>
+
+  <hr class="case-divider" />
+
+  <!-- 4. TÜRKÇE PII TESPİTİ -->
+  <section class="case-section" aria-label="Türkçe PII tespiti yaklaşımı">
+    <h2>4. Türkçe PII Tespiti</h2>
+    <p>Türkçe kişisel verileri tespit etmek için <code>tr_core_news_trf</code> modeli ile özel yapısal kuralları birlikte kullandım. Ad ve adres gibi bağlamsal varlıklarda dil modeli yardımcı olurken TCKN, IBAN ve telefon gibi belirli biçime sahip alanlarda kural tabanlı kontroller kullandım.</p>
+    <p>Bu hibrit yaklaşımın amacı tek bir tespit yöntemine bağımlı kalmamak ve farklı kişisel veri türlerini aynı koruma akışında ele almaktı. Sistemin kapsamlı precision/recall ölçümü henüz yayımlanmıyor; sonuçlar sentetik test verisiyle doğrulandı.</p>
+
+    <div class="tech-pills" aria-label="Kullanılan teknolojiler">
+      <span class="tech-pill">spaCy</span>
+      <span class="tech-pill">tr_core_news_trf</span>
+      <span class="tech-pill">Kural tabanlı TCKN/IBAN tespiti</span>
+      <span class="tech-pill">Hibrit NER + yapısal kurallar</span>
+    </div>
+  </section>
+
+  <hr class="case-divider" />
+
+  <!-- 5. İKİ KORUMA MODU -->
+  <section class="case-section" aria-label="İki farklı koruma modu">
+    <h2>5. İki Koruma Modu</h2>
+
+    <div class="mode-grid">
+      <div class="mode-card">
+        <div class="mode-card-title">Placeholder Modu</div>
+        <p style="font-size:15px;line-height:1.65;color:#2a2520;margin:0;">Gerçek değerin daha sonra geri yüklenmesi gerekmeyen senaryolarda kişisel veri anlamlı bir placeholder ile değiştirilir. Aşağıdaki servisler mesajın işlevsel bağlamını korurken gerçek değeri görmez.</p>
+      </div>
+      <div class="mode-card">
+        <div class="mode-card-title">Tokenized Modu</div>
+        <p style="font-size:15px;line-height:1.65;color:#2a2520;margin:0;">Gerçek değere daha sonra yetkili biçimde ihtiyaç duyulan senaryolarda kişisel veri benzersiz bir token ile değiştirilir. Token ile gerçek değer arasındaki eşleşme frontend'de veya açık metin olarak tutulmaz.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="case-divider" />
+
+  <!-- 6. ŞİFRELİ TOKEN VAULT -->
+  <section class="case-section" aria-label="Şifreli Token Vault tasarımı">
+    <h2>6. Şifreli Token Vault</h2>
+    <p>Geri döndürülebilir token eşleşmelerini PostgreSQL üzerinde şifreli bir Vault içinde tuttum. Master key Git dışında bırakılan <code>.env</code> dosyasında yapılandırıldı; Base64 çözümü ve 32 byte uzunluğu doğrulandı.</p>
+    <p>Test sırasında Vault içindeki hassas kayıtları görüntülemek yerine yalnızca kayıt sayısını kontrol ettim. Başlangıçta dört olan şifreli kayıt sayısının testler sonunda dokuza çıkması, tokenlaştırma senaryolarının Vault kaydı oluşturduğunu doğruladı.</p>
+    <p>Gerçek anahtar veya token değerleri bu belgede yer almaz.</p>
+
+    <div class="stat-row" role="list">
+      <div class="stat-box" role="listitem">
+        <div class="stat-box-num">9</div>
+        <div class="stat-box-lbl">Test sonrası Vault kaydı</div>
+      </div>
+      <div class="stat-box" role="listitem">
+        <div class="stat-box-num">AES</div>
+        <div class="stat-box-lbl">Şifreleme (yapılandırılmış)</div>
+      </div>
+      <div class="stat-box" role="listitem">
+        <div class="stat-box-num">32B</div>
+        <div class="stat-box-lbl">Master key uzunluğu</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="case-divider" />
+
+  <!-- 7. SAME-ORIGIN VERİ AKIŞI -->
+  <section class="case-section" aria-label="Same-origin veri akışı tasarımı">
+    <h2>7. Same-Origin Veri Akışı</h2>
+    <p>Tarayıcının backend ve PII servislerine doğrudan bağlanmasını istemedim. İstekleri Next.js frontend üzerinden same-origin proxy ile yönlendirdim. Browser network testinde yalnızca frontend origin'ine bağlantı görüldü; backend, PII servis portları veya harici servislerle doğrudan browser iletişimi görülmedi.</p>
+    <p style="font-size:14px;color:#5a5550;font-style:italic;">Mimari: Tarayıcı → Next.js (same-origin) → PII Servisi / Backend API / PostgreSQL. Tarayıcı yalnızca frontend origin'ini görür.</p>
+  </section>
+
+  <hr class="case-divider" />
+
+  <!-- 8. YÜKSEK RİSKLİ İŞLEMLERDE İNSAN ONAYI -->
+  <section class="case-section" aria-label="Human-in-the-loop onay mekanizması">
+    <h2>8. Yüksek Riskli İşlemlerde İnsan Onayı</h2>
+    <p>Sipariş iptali ve e-posta gönderim simülasyonu gibi dış dünyada sonuç oluşturan işlemleri tek mesajla çalıştırılabilir bırakmadım.</p>
+    <p>Sistem önce işlem planı oluşturuyor, kullanıcıya onay kartı gösteriyor ve ikinci açık onayı bekliyor. Sipariş iptali testinde confirmation body yalnızca <code>plan_id</code> ve <code>confirm: true</code> içerdi. İşlem <code>CANCELLED</code> sonucuyla tamamlandıktan sonra kart yeniden kullanılamayan read-only makbuza dönüştü.</p>
+    <p>E-posta senaryosunda gerçek gönderim yapılmadı. Onay sonrasında <code>QUEUED_SIMULATION</code> sonucu ve sentetik <code>MSG-TEST-*</code> kimliği üretildi; gerçek e-posta adresi görünür hale gelmedi.</p>
+  </section>
+
+  <hr class="case-divider" />
+
+  <!-- 9. GÜVENLİ HATA YÖNETİMİ -->
+  <section class="case-section" aria-label="Güvenli hata yönetimi">
+    <h2>9. Güvenli Hata Yönetimi</h2>
+    <p>Bir backend hatasının kullanıcıya ham exception, stack trace, servis adresi veya hassas sistem bilgisi göstermemesi gerekiyordu. Güvenli hata görünümünü bu sınırlar üzerinden test ettim. Hata senaryosunda raw exception, stack trace ve backend URL gösterilmedi.</p>
+  </section>
+
+  <hr class="case-divider" />
+
+  <!-- 10. UÇTAN UCA DOĞRULAMA -->
+  <section class="case-section" aria-label="Uçtan uca test matrisi">
+    <h2>10. Uçtan Uca Doğrulama</h2>
+    <p>Test edilen yerel senaryolarda ve incelenen browser yüzeylerinde hassas veri sızıntısı görülmedi. Aşağıdaki tablo doğrulanan kontrolleri özetler.</p>
+
+    <table class="test-table" aria-label="Test matrisi">
+      <thead>
+        <tr><th>Kontrol</th><th>Sonuç</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Backend health</td><td class="sonuc-ok">200</td></tr>
+        <tr><td>Backend readiness</td><td class="sonuc-ok">200</td></tr>
+        <tr><td>PII servisi</td><td class="sonuc-ok">Healthy</td></tr>
+        <tr><td>PostgreSQL</td><td class="sonuc-ok">Healthy</td></tr>
+        <tr><td>Frontend</td><td class="sonuc-ok">200</td></tr>
+        <tr><td>Tokenize endpoint</td><td class="sonuc-ok">200</td></tr>
+        <tr><td>TOKENIZED chat</td><td class="sonuc-ok">Başarılı</td></tr>
+        <tr><td>Sipariş durumu</td><td class="sonuc-ok">SHIPPED</td></tr>
+        <tr><td>Sipariş iptali</td><td class="sonuc-ok">CANCELLED</td></tr>
+        <tr><td>E-posta işlemi</td><td class="sonuc-ok">QUEUED_SIMULATION</td></tr>
+        <tr><td>Uygulama console exception</td><td class="sonuc-ok">0</td></tr>
+        <tr><td>Hassas veri sızıntısı (DOM, API, console, storage, network)</td><td class="sonuc-ok">Test edilen yüzeylerde görülmedi</td></tr>
+        <tr><td>Harici browser isteği</td><td class="sonuc-ok">Görülmedi</td></tr>
+        <tr><td>Mobil yatay taşma</td><td class="sonuc-ok">Görülmedi</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <hr class="case-divider" />
+
+  <!-- 11. RESPONSIVE DOĞRULAMA -->
+  <section class="case-section" aria-label="Responsive doğrulama">
+    <h2>11. Responsive Doğrulama</h2>
+    <p>Arayüzü 1440×1000, 1024×900, 768×1024 ve 390×844 çözünürlüklerinde test ettim. Bu dört görünümde yatay overflow oluşmadı.</p>
+  </section>
+
+  <hr class="case-divider" />
+
+  <!-- 12. SONUÇ -->
+  <section class="case-section" aria-label="Sonuç">
+    <h2>12. Sonuç</h2>
+    <p>Ortaya çıkan sistem, Türkçe kişisel verileri model veya dış servis katmanına ulaşmadan tespit eden, kullanım senaryosuna göre placeholder veya şifreli token ile koruyan ve yüksek riskli işlemleri ikinci kullanıcı onayına bağlayan yerel bir MVP oldu.</p>
+    <p>Projenin başarısını yalnızca çalışan arayüz veya başarılı API cevaplarıyla değerlendirmedim. Hassas token, <code>protected_text</code>, ciphertext, nonce ve token eşleşmelerinin DOM, frontend cevapları, console, storage ve browser network katmanlarında görünmediğini ayrı ayrı kontrol ettim.</p>
+  </section>
+
+  <hr class="case-divider" />
+
+  <!-- 13. SINIRLAMALAR -->
+  <section class="case-section" aria-label="Sınırlamalar ve açık noktalar">
+    <h2>13. Sınırlamalar</h2>
+    <div class="sinir-box">
+      <strong>Bu projede bulunmayanlar</strong>
+      <ul>
+        <li>Gerçek kullanıcı girişi ve roller henüz yok; sonraki fazda planlandı</li>
+        <li>Ayrıntılı audit kayıtları sonraki fazda gelecek</li>
+        <li>Gerçek ERP entegrasyonu bulunmuyor; sipariş verileri sentetik</li>
+        <li>Gerçek e-posta servisi bağlı değil; gönderim tamamen simülasyon</li>
+        <li>Gerçek LLM bağlı değil; model katmanı stub ile temsil edildi</li>
+        <li>Production deployment yapılmadı; yerel ortamda çalıştırıldı</li>
+        <li>Sentetik test verileri kullanıldı; gerçek kullanıcı verisi test edilmedi</li>
+        <li>PII tespitinin kapsamlı precision/recall ölçümü henüz paylaşılmıyor</li>
+        <li>Production secret rotation ve anahtar yönetimi tamamlanmadı</li>
+        <li>Sistem için tam KVKK uyumluluğu iddia edilmiyor</li>
+      </ul>
+    </div>
+  </section>
+
+  <hr class="case-divider" />
+
+  <!-- 14. ÖĞRENDİKLERİM -->
+  <section class="case-section" aria-label="Öğrendiklerim">
+    <h2>14. Öğrendiklerim</h2>
+    <p>Bu proje bana PII korumasının yalnızca bir regex veya NER modeli eklemekten ibaret olmadığını gösterdi. Veriyi tespit etmek kadar token eşleşmesinin nerede saklandığı, hangi servisin ham veriye erişebildiği ve tarayıcı katmanında iz kalıp kalmadığı da güvenlik mimarisinin parçasıydı.</p>
+    <p>Bir endpoint'in başarılı cevap vermesi de tek başına yeterli değildi. Güvenlik varsayımlarını doğrulamak için DOM, API cevapları, console, storage ve network katmanlarını ayrı ayrı test etmek gerektiğini gördüm.</p>
+  </section>
+
+  <hr class="case-divider" />
+
+  <!-- 15. SONRAKİ FAZ -->
+  <section class="case-section" aria-label="Sonraki faz planı">
+    <h2>15. Sonraki Faz</h2>
+    <ul>
+      <li>Kullanıcı girişi ve oturum yönetimi</li>
+      <li>Rol tabanlı erişim kontrolü</li>
+      <li>Ayrıntılı audit kayıtları</li>
+      <li>Gerçek ERP entegrasyonu</li>
+      <li>Gerçek e-posta servis entegrasyonu</li>
+      <li>Gerçek LLM bağlantısı</li>
+      <li>RAG ve embedding güvenliği</li>
+      <li>Saklama ve silme politikaları</li>
+      <li>Production anahtar yönetimi ve secret rotation</li>
+      <li>Production deployment</li>
+    </ul>
+  </section>
+
+  <hr class="case-divider" />
+
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:32px;">
+    <a href="/projeler" class="btn btn-secondary">← Tüm Projeler</a>
+    <a href="/iletisim" class="btn btn-primary">İletişime Geç →</a>
+  </div>
+
+</div>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Tuba <span>Çelik</span></div>
+      <div class="footer-role">Data &amp; AI Associate · Mad Cat Labs</div>
+    </div>
+    <nav class="social-links" aria-label="Sosyal medya bağlantıları">
+      <a href="https://github.com/tubaacelik" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg> GitHub</a>
+      <a href="https://www.linkedin.com/in/tuba-%C3%A7elik/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> LinkedIn</a>
+      <a href="https://medium.com/@tubaacelikk11" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Medium"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg> Medium</a>
+    </nav>
+    <div style="text-align:center;">
+      <p class="footer-copy">© 2026 Tuba Çelik</p>
+      <a href="/gizlilik" style="font-size:12px;color:#7a7065;font-weight:600;text-decoration:underline;">Gizlilik Politikası</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  function closeMenu() { mobileMenu.hidden = true; mobileMenu.style.display = 'none'; hamburger.setAttribute('aria-expanded', 'false'); }
+  hamburger.addEventListener('click', () => {
+    const isOpen = !mobileMenu.hidden;
+    if (isOpen) { closeMenu(); } else {
+      mobileMenu.hidden = false; mobileMenu.style.display = 'flex';
+      hamburger.setAttribute('aria-expanded', 'true');
+      mobileMenu.querySelector('a').focus();
+    }
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  document.addEventListener('click', e => { if (!mobileMenu.hidden && !mobileMenu.contains(e.target) && !hamburger.contains(e.target)) closeMenu(); });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  function checkNav() {
+    const links = document.getElementById('nav-links-desktop');
+    if (window.innerWidth < 640) { links.style.display = 'none'; hamburger.style.display = 'flex'; }
+    else { links.style.display = 'flex'; hamburger.style.display = 'none'; closeMenu(); }
+  }
+  checkNav(); window.addEventListener('resize', checkNav);
+</script>
+</body>
+</html>

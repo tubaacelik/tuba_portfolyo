@@ -131,7 +131,47 @@
     </article>
 
     <!-- 4 -->
-    <article class="proje-item reverse fade-in" role="listitem" aria-label="Kredi kartı risk analizi projesi">
+    <article class="proje-item reverse fade-in" role="listitem" aria-label="Türkçe PII korumalı güvenli AI chat projesi">
+      <div class="proje-gorsel">
+        <img src="images/proje-guvenli-chat.svg"
+             alt="Türkçe PII korumalı güvenli AI chat veri akışı diyagramı"
+             width="560" height="350"
+             loading="lazy"
+             decoding="async" />
+      </div>
+      <div class="proje-metin">
+        <div class="proje-tags">
+          <span class="tag tag-teal">Türkçe NLP</span>
+          <span class="tag tag-peri">PII Detection</span>
+          <span class="tag tag-sari">Token Vault</span>
+          <span class="tag tag-pembe">Human-in-the-loop</span>
+          <span class="tag tag-mor">PostgreSQL</span>
+          <span class="tag tag-gray">AI Security</span>
+        </div>
+        <p style="font-size:11px;font-weight:700;color:#5a5550;margin:4px 0 8px;letter-spacing:.03em;">Yerel güvenli MVP · Sentetik veriler</p>
+        <h3 class="proje-title">Türkçe PII Korumalı Güvenli AI Chat</h3>
+        <p style="font-size:15px;line-height:1.75;color:#3a3530;margin-bottom:20px;">
+          Üretken yapay zeka destekli chat sistemlerinde kişisel veri güvenliği yalnızca metindeki hassas alanları maskelemekten ibaret değil. Verinin hangi servislere ulaştığı, token eşleşmelerinin nerede saklandığı, frontend'in hangi bilgilere erişebildiği ve etkili işlemlerin insan onayı olmadan çalıştırılıp çalıştırılamadığı da güvenlik sınırının bir parçası.
+        </p>
+        <p style="font-size:15px;line-height:1.75;color:#3a3530;margin-bottom:20px;">
+          Bu problem için Türkçe PII tespiti, PLACEHOLDER ve TOKENIZED koruma modları, PostgreSQL üzerinde şifreli Token Vault ve yüksek riskli işlemler için ikinci onay mekanizması içeren yerel bir AI chat MVP'si geliştirdim. <code>tr_core_news_trf</code> modeli ile yapısal veri kurallarını birlikte kullanarak TCKN, IBAN, telefon ve benzeri biçimsel alanlarda hibrit bir yaklaşım kurdum.
+        </p>
+        <p style="font-size:15px;line-height:1.75;color:#3a3530;margin-bottom:20px;">
+          Sistemi yalnızca başarılı API cevaplarıyla değerlendirmedim. Ham veya korunmuş hassas verinin görünür DOM, frontend API cevapları, console, local storage, session storage, IndexedDB ve browser network trafiğinde bulunup bulunmadığını ayrı ayrı kontrol ettim. Ortaya çıkan çalışma gerçek dış servislerin bağlı olmadığı, sentetik verilerle çalışan yerel bir MVP'dir.
+        </p>
+        <dl class="proje-nke">
+          <div><dt>PROBLEM</dt><dd>AI chat sistemlerinde kullanıcıların yazdığı TCKN, IBAN, e-posta ve sipariş gibi kişisel verilerin model, log veya tarayıcı katmanlarına kontrolsüz biçimde taşınması güvenlik riski oluşturuyordu.</dd></div>
+          <div><dt>YAKLAŞIM</dt><dd>Türkçe PII'yı model çağrısından önce tespit eden; senaryoya göre placeholder veya şifreli token ile koruyan bir veri akışı geliştirdim. Token eşleşmelerini PostgreSQL üzerinde şifreli Vault'ta tuttum; yüksek riskli işlemleri ikinci kullanıcı onayına bağladım.</dd></div>
+          <div><dt>ETKİ</dt><dd>Tokenlaştırma, sipariş sorgulama, onaylı iptal ve e-posta simülasyonu uçtan uca çalıştı. Test edilen browser yüzeylerinde hassas veri sızıntısı görülmedi. Dört farklı ekran boyutunda yatay taşma oluşmadı.</dd></div>
+        </dl>
+        <div class="proje-links">
+          <a href="/projeler/guvenli-ai-chat" class="btn btn-primary">Vaka Çalışması →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="proje-item fade-in" role="listitem" aria-label="Kredi kartı risk analizi projesi">
       <div class="proje-gorsel">
         <img src="images/proje-kredikarti.png" alt="Kredi kartı risk analizi illüstrasyonu" />
       </div>

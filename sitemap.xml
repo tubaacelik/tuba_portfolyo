@@ -54,6 +54,12 @@
   </url>
 
   <url>
+    <loc>https://tubacelik.co/projeler/guvenli-ai-chat</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
     <loc>https://tubacelik.co/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
