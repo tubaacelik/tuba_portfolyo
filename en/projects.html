@@ -16,13 +16,13 @@
   <div class="nav-inner">
     <a href="/en" class="nav-logo">TC ✦</a>
     <ul class="nav-links" id="nav-links-desktop">
-      <li><a href="/en/what-i-do" target="_blank" rel="noopener noreferrer">What I Do</a></li>
-      <li><a href="/en/projects" class="active" target="_blank" rel="noopener noreferrer">Projects</a></li>
-      <li><a href="/en/blog" target="_blank" rel="noopener noreferrer">Blog</a></li>
-      <li><a href="/en/documents" target="_blank" rel="noopener noreferrer">Documents</a></li>
-      <li><a href="/en/about" target="_blank" rel="noopener noreferrer">About</a></li>
-      <li><a href="/en/skills" target="_blank" rel="noopener noreferrer">Skills</a></li>
-      <li><a href="/en/contact" target="_blank" rel="noopener noreferrer">Contact</a></li>
+      <li><a href="/en/what-i-do">What I Do</a></li>
+      <li><a href="/en/projects" class="active">Projects</a></li>
+      <li><a href="/en/blog">Blog</a></li>
+      <li><a href="/en/documents">Documents</a></li>
+      <li><a href="/en/about">About</a></li>
+      <li><a href="/en/skills">Skills</a></li>
+      <li><a href="/en/contact">Contact</a></li>
       <li><a href="/projeler" class="lang-switch">TR</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -30,13 +30,13 @@
     </button>
   </div>
   <nav id="mobile-menu" aria-label="Mobile navigation" hidden>
-    <a href="/en/what-i-do" target="_blank" rel="noopener noreferrer">What I Do</a>
-    <a href="/en/projects" class="active" target="_blank" rel="noopener noreferrer">Projects</a>
-    <a href="/en/blog" target="_blank" rel="noopener noreferrer">Blog</a>
-    <a href="/en/documents" target="_blank" rel="noopener noreferrer">Documents</a>
-    <a href="/en/about" target="_blank" rel="noopener noreferrer">About</a>
-    <a href="/en/skills" target="_blank" rel="noopener noreferrer">Skills</a>
-    <a href="/en/contact" target="_blank" rel="noopener noreferrer">Contact</a>
+    <a href="/en/what-i-do">What I Do</a>
+    <a href="/en/projects" class="active">Projects</a>
+    <a href="/en/blog">Blog</a>
+    <a href="/en/documents">Documents</a>
+    <a href="/en/about">About</a>
+    <a href="/en/skills">Skills</a>
+    <a href="/en/contact">Contact</a>
     <a href="/projeler" class="lang-switch">TR</a>
   </nav>
 </nav>
@@ -120,7 +120,58 @@
     </article>
 
     <!-- 4 -->
-    <article class="proje-item reverse fade-in" role="listitem" aria-label="Credit card risk analysis project">
+    <article class="proje-item reverse fade-in" role="listitem" aria-label="Turkish PII-Protected Secure AI Chat project">
+      <div class="proje-gorsel">
+        <img src="../images/proje-guvenli-chat.svg"
+             alt="Turkish PII-Protected Secure AI Chat data flow diagram"
+             width="560" height="350"
+             loading="lazy"
+             decoding="async" />
+      </div>
+      <div class="proje-metin">
+        <div class="proje-tags">
+          <span class="tag tag-teal">Turkish NLP</span>
+          <span class="tag tag-peri">PII Detection</span>
+          <span class="tag tag-sari">Token Vault</span>
+          <span class="tag tag-pembe">Human-in-the-loop</span>
+          <span class="tag tag-mor">PostgreSQL</span>
+          <span class="tag tag-gray">AI Security</span>
+        </div>
+        <p style="font-size:11px;font-weight:700;color:#5a5550;margin:4px 0 8px;letter-spacing:.03em;">Local secure MVP · Synthetic data</p>
+        <h3 class="proje-title">Turkish PII-Protected Secure AI Chat</h3>
+        <p class="proje-desc">
+          In AI chat systems, personal data users type into messages — national ID numbers,
+          IBANs, phone numbers, addresses, emails and order references — can flow
+          uncontrolled to model, log or browser layers. The security boundary is not just
+          masking visible fields; it also includes where token mappings are stored,
+          what the frontend can access, and whether high-risk actions require explicit
+          human confirmation.
+        </p>
+        <p class="proje-desc">
+          I built a local AI chat MVP with Turkish PII detection using
+          <code>tr_core_news_trf</code> and structural rules, two protection modes
+          (PLACEHOLDER and TOKENIZED), an encrypted PostgreSQL Token Vault, and a
+          second-confirmation mechanism for order cancellation and email simulations.
+          I verified the system not just through successful API responses but by
+          inspecting the DOM, console, storage layers, and browser network traffic
+          separately. No sensitive data leakage was observed on tested surfaces.
+        </p>
+        <p style="font-size:13px;color:#5a5550;font-style:italic;">
+          No real LLM, ERP or email service connected. Synthetic test data. No full KVKK compliance claimed. Local deployment only.
+        </p>
+        <dl class="proje-nke">
+          <div><dt>PROBLEM</dt><dd>Personal data typed into AI chat flowed uncontrolled to model and browser layers — with no detection, protection or human confirmation before action.</dd></div>
+          <div><dt>APPROACH</dt><dd>Detected Turkish PII before model calls using a hybrid NER + rule approach; protected it with placeholder or encrypted token by scenario; stored mappings in an encrypted Vault; gated destructive actions behind explicit user confirmation.</dd></div>
+          <div><dt>OUTCOME</dt><dd>Tokenization, order lookup, confirmed cancellation and email simulation all ran end-to-end. No sensitive data leakage observed on tested browser surfaces. No horizontal overflow across four screen sizes.</dd></div>
+        </dl>
+        <div class="proje-links">
+          <a href="/projeler/guvenli-ai-chat" class="btn btn-primary">Case Study →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="proje-item fade-in" role="listitem" aria-label="Credit card risk analysis project">
       <div class="proje-gorsel">
         <img src="../images/proje-kredikarti.png" alt="Credit card risk analysis illustration" />
       </div>
