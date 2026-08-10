@@ -149,9 +149,64 @@
   </div>
 </div>
 
+<!-- ═══════════════════════ SCROLL STORY ═══════════════════════ -->
+<section class="scroll-story" id="scroll-story" aria-label="Uzmanlık alanları">
+  <div class="scroll-pin">
+
+    <div class="scroll-left">
+      <div class="ss-bg-num" id="ss-bg-num" aria-hidden="true">01</div>
+      <span class="ss-label" id="ss-label">UZMANLIK ALANLARI</span>
+      <div class="ss-num-display" id="ss-num-display">01</div>
+      <h2 class="ss-title" id="ss-title">AI Destekli<br>Tasarım</h2>
+      <p class="ss-desc" id="ss-desc">Türkçe LLM geliştirme sürecini uçtan uca yürütüyorum: sentetik veri mühendisliği, LoRA/DPO fine-tuning, benchmark tasarımı ve on-prem dağıtım. Problemi teşhis eder, modelin neden başarısız olduğunu veri, mimari ve değerlendirme katmanlarında araştırırım.</p>
+      <div class="ss-accent-bar" id="ss-bar"></div>
+    </div>
+
+    <div class="scroll-right" aria-hidden="true">
+      <div class="ss-step-item active" data-step="0">
+        <span class="ss-step-num">01</span>
+        <div>
+          <div class="ss-step-title">AI Destekli Tasarım</div>
+          <div class="ss-step-sub">LLM geliştirme, fine-tuning, benchmark</div>
+        </div>
+      </div>
+      <div class="ss-step-item" data-step="1">
+        <span class="ss-step-num">02</span>
+        <div>
+          <div class="ss-step-title">Dijital Pazarlama & SEO</div>
+          <div class="ss-step-sub">Segmentasyon, otomasyon, analitik</div>
+        </div>
+      </div>
+      <div class="ss-step-item" data-step="2">
+        <span class="ss-step-num">03</span>
+        <div>
+          <div class="ss-step-title">Yazılım & Web Geliştirme</div>
+          <div class="ss-step-sub">n8n, Next.js, araç geliştirme</div>
+        </div>
+      </div>
+      <div class="ss-step-item" data-step="3">
+        <span class="ss-step-num">04</span>
+        <div>
+          <div class="ss-step-title">AI Danışmanlığı</div>
+          <div class="ss-step-sub">Ürün keşfi, kullanım senaryoları, teslimat</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="scroll-triggers" aria-hidden="true">
+    <div class="scroll-step" data-step="0"></div>
+    <div class="scroll-step" data-step="1"></div>
+    <div class="scroll-step" data-step="2"></div>
+    <div class="scroll-step" data-step="3"></div>
+    <!-- extra 20% for breathing room -->
+    <div style="height:20%"></div>
+  </div>
+</section>
+
 <!-- ═══════════════════════ NE YAPIYORUM ═══════════════════════ -->
 <section id="ne-yapiyorum" class="section" aria-label="Uzmanlık alanları">
-  <span class="section-label">Uzmanlık Alanlarım</span>
+  <span class="section-label">02 — Uzmanlık Alanlarım</span>
   <h2>NE YAPIYORUM</h2>
 
   <div class="cards-grid" role="list">
@@ -664,6 +719,114 @@
   } else {
     document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
   }
+
+  /* ── Scroll Story ── */
+  const SS_DATA = [
+    {
+      num: '01',
+      label: 'UZMANLIK ALANLARI',
+      title: 'AI Destekli\nTasarım',
+      desc: 'Türkçe LLM geliştirme sürecini uçtan uca yürütüyorum: sentetik veri mühendisliği, LoRA/DPO fine-tuning, benchmark tasarımı ve on-prem dağıtım. Problemi teşhis eder, modelin neden başarısız olduğunu veri, mimari ve değerlendirme katmanlarında araştırırım.',
+      color: '#2BA88E'
+    },
+    {
+      num: '02',
+      label: 'UZMANLIK ALANLARI',
+      title: 'Dijital Pazarlama\n& SEO',
+      desc: 'Davranış tabanlı müşteri segmentasyonu, Mailchimp ve CRM otomasyon akışları, GA4 ve Looker Studio ile performans ölçümü. 4 yıllık performans pazarlama geçmişim ile A/B testini ve veri okumayı stratejik kararlara dönüştürürüm.',
+      color: '#EC5A9E'
+    },
+    {
+      num: '03',
+      label: 'UZMANLIK ALANLARI',
+      title: 'Yazılım &\nWeb Geliştirme',
+      desc: 'n8n ile tekrarlayan iş akışlarını otomatize eder, HTML/CSS/JS ve Next.js ile erişilebilir ve hızlı araçlar inşa ederim. Bu portföy sitesi dahil; çıktıyı üreten aracı kendim yapmayı tercih ederim.',
+      color: '#6E7BE8'
+    },
+    {
+      num: '04',
+      label: 'UZMANLIK ALANLARI',
+      title: 'AI\nDanışmanlığı',
+      desc: '5 kurumsal müşteri için AI ve analitik ürünleri uçtan uca teslim ettim: keşif, kapsam belirleme, teslimat ve ölçüm. Hangi verinin gerçekten karar değiştirdiğini ve hangi AI kullanım senaryosunun geliştirmeye değer olduğunu birlikte çözeriz.',
+      color: '#F5C842'
+    }
+  ];
+
+  const ssTitle    = document.getElementById('ss-title');
+  const ssDesc     = document.getElementById('ss-desc');
+  const ssNumDisp  = document.getElementById('ss-num-display');
+  const ssBgNum    = document.getElementById('ss-bg-num');
+  const ssLabel    = document.getElementById('ss-label');
+  const ssBar      = document.getElementById('ss-bar');
+  const ssSteps    = document.querySelectorAll('.ss-step-item');
+  const scrollStory = document.getElementById('scroll-story');
+
+  let currentStep = -1;
+
+  function applyStep(idx) {
+    if (idx === currentStep) return;
+    currentStep = idx;
+    const d = SS_DATA[idx];
+    ssNumDisp.textContent  = d.num;
+    ssBgNum.textContent    = d.num;
+    ssLabel.textContent    = d.label;
+    ssTitle.innerHTML      = d.title.replace('\n', '<br>');
+    ssDesc.textContent     = d.desc;
+    ssBar.style.backgroundColor = d.color;
+    ssSteps.forEach((s, i) => s.classList.toggle('active', i === idx));
+  }
+
+  function onScrollStory() {
+    if (!scrollStory) return;
+    const rect = scrollStory.getBoundingClientRect();
+    const total = scrollStory.offsetHeight - window.innerHeight;
+    const scrolled = -rect.top;
+    const progress = Math.max(0, Math.min(1, scrolled / total));
+    const idx = Math.min(3, Math.floor(progress * 4));
+    const stepProgress = (progress * 4) % 1;
+
+    applyStep(idx);
+    ssBar.style.width = (idx < 3 ? stepProgress * 100 : 100) + '%';
+  }
+
+  if (!prefersReduced && scrollStory) {
+    applyStep(0);
+    ssBar.style.width = '0%';
+    window.addEventListener('scroll', onScrollStory, { passive: true });
+    onScrollStory();
+  }
+
+  /* ── Stat counter animation ── */
+  function countUp(el, target, suffix, duration) {
+    const start = performance.now();
+    const isFloat = String(target).includes('.');
+    const tick = (now) => {
+      const p = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      const val = isFloat
+        ? (ease * target).toFixed(1)
+        : Math.round(ease * target);
+      el.textContent = val + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  const statObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      statObs.unobserve(e.target);
+      const el = e.target.querySelector('.stat-num');
+      if (!el) return;
+      const raw = el.textContent.trim();
+      if (raw === '200K+')   { el.textContent = '0K+';  countUp(el, 200, 'K+', 1400); }
+      else if (raw === '%94') { el.textContent = '%0';   countUp(el, 94,  '%', 1200, true); }
+      else if (raw === '200+') { el.textContent = '0+';  countUp(el, 200, '+', 1200); }
+      else if (raw === '2B–27B') { /* static */ }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('.stat-item').forEach(el => statObs.observe(el));
 
   /* ── İletişim formu ── */
   const form = document.getElementById('contact-form');
