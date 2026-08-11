@@ -75,9 +75,85 @@
   </div>
 </section>
 
+<!-- ═══════════════════════ STATS BAND ═══════════════════════ -->
+<div class="stats-band" aria-label="Work summary">
+  <div class="stats-band-inner">
+    <div class="stat-item">
+      <span class="stat-num">200K+</span>
+      <span class="stat-label">Training data rows (MMX project)</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">94%</span>
+      <span class="stat-label">Format compliance — automated validation</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">200+</span>
+      <span class="stat-label">Question evaluation benchmark</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num">2B–27B</span>
+      <span class="stat-label">Model comparison range (Qwen)</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ SCROLL STORY ═══════════════════════ -->
+<section class="scroll-story" id="scroll-story" aria-label="Areas of expertise">
+  <div class="scroll-pin">
+
+    <div class="scroll-left">
+      <div class="ss-bg-num" id="ss-bg-num" aria-hidden="true">01</div>
+      <span class="ss-label" id="ss-label">AREAS OF EXPERTISE</span>
+      <div class="ss-num-display" id="ss-num-display">01</div>
+      <h2 class="ss-title" id="ss-title">AI-Powered<br>Design</h2>
+      <p class="ss-desc" id="ss-desc">I run end-to-end Turkish LLM development: synthetic data engineering, LoRA/DPO fine-tuning, benchmark design and on-prem deployment. I diagnose the problem, researching why a model fails across the data, architecture and evaluation layers.</p>
+      <div class="ss-accent-bar" id="ss-bar"></div>
+    </div>
+
+    <div class="scroll-right" aria-hidden="true">
+      <div class="ss-step-item active" data-step="0">
+        <span class="ss-step-num">01</span>
+        <div>
+          <div class="ss-step-title">AI-Powered Design</div>
+          <div class="ss-step-sub">LLM development, fine-tuning, benchmark</div>
+        </div>
+      </div>
+      <div class="ss-step-item" data-step="1">
+        <span class="ss-step-num">02</span>
+        <div>
+          <div class="ss-step-title">Digital Marketing & SEO</div>
+          <div class="ss-step-sub">Segmentation, automation, analytics</div>
+        </div>
+      </div>
+      <div class="ss-step-item" data-step="2">
+        <span class="ss-step-num">03</span>
+        <div>
+          <div class="ss-step-title">Software & Web Development</div>
+          <div class="ss-step-sub">n8n, Next.js, tooling</div>
+        </div>
+      </div>
+      <div class="ss-step-item" data-step="3">
+        <span class="ss-step-num">04</span>
+        <div>
+          <div class="ss-step-title">AI Consulting</div>
+          <div class="ss-step-sub">Product discovery, use cases, delivery</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="scroll-triggers" aria-hidden="true">
+    <div class="scroll-step" data-step="0"></div>
+    <div class="scroll-step" data-step="1"></div>
+    <div class="scroll-step" data-step="2"></div>
+    <div class="scroll-step" data-step="3"></div>
+    <div style="height:20%"></div>
+  </div>
+</section>
+
 <!-- ═══════════════════════ WHAT I DO ═══════════════════════ -->
 <section id="ne-yapiyorum" class="section" aria-label="Services">
-  <span class="section-label">Areas of Expertise</span>
+  <span class="section-label">02 — Areas of Expertise</span>
   <h2>WHAT I DO</h2>
 
   <div class="cards-grid" role="list">
@@ -548,6 +624,78 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  /* ── Scroll Story ── */
+  const SS_DATA = [
+    { num:'01', label:'AREAS OF EXPERTISE', title:'AI-Powered\nDesign', desc:'I run end-to-end Turkish LLM development: synthetic data engineering, LoRA/DPO fine-tuning, benchmark design and on-prem deployment. I diagnose the problem, researching why a model fails across the data, architecture and evaluation layers.', color:'#2BA88E' },
+    { num:'02', label:'AREAS OF EXPERTISE', title:'Digital Marketing\n& SEO', desc:'Behaviour-based customer segmentation, Mailchimp and CRM automation flows, performance measurement with GA4 and Looker Studio. With 4 years of performance marketing experience I turn A/B testing and data reading into strategic decisions.', color:'#EC5A9E' },
+    { num:'03', label:'AREAS OF EXPERTISE', title:'Software &\nWeb Development', desc:'I automate repetitive workflows with n8n and build accessible, fast tools with HTML/CSS/JS and Next.js. This portfolio site included — I prefer to build the tools that produce the output myself.', color:'#6E7BE8' },
+    { num:'04', label:'AREAS OF EXPERTISE', title:'AI\nConsulting', desc:'I delivered AI and analytics products end-to-end for 5 enterprise clients: discovery, scoping, delivery and measurement. We figure out together which data actually changes decisions and which AI use case is worth building.', color:'#F5C842' }
+  ];
+
+  const ssTitle   = document.getElementById('ss-title');
+  const ssDesc    = document.getElementById('ss-desc');
+  const ssNumDisp = document.getElementById('ss-num-display');
+  const ssBgNum   = document.getElementById('ss-bg-num');
+  const ssLabel   = document.getElementById('ss-label');
+  const ssBar     = document.getElementById('ss-bar');
+  const ssSteps   = document.querySelectorAll('.ss-step-item');
+  const scrollStory = document.getElementById('scroll-story');
+
+  let currentStep = -1;
+
+  function applyStep(idx) {
+    if (idx === currentStep) return;
+    currentStep = idx;
+    const d = SS_DATA[idx];
+    ssTitle.innerHTML  = d.title.replace('\n', '<br>');
+    ssDesc.textContent = d.desc;
+    ssNumDisp.textContent = d.num;
+    ssBgNum.textContent   = d.num;
+    ssLabel.textContent   = d.label;
+    ssBar.style.backgroundColor = d.color;
+    ssSteps.forEach((s, i) => s.classList.toggle('active', i === idx));
+  }
+
+  if (scrollStory) {
+    function onScrollStory() {
+      const rect  = scrollStory.getBoundingClientRect();
+      const total = scrollStory.offsetHeight - window.innerHeight;
+      const progress = Math.max(0, Math.min(1, -rect.top / total));
+      const idx = Math.min(3, Math.floor(progress * 4));
+      const stepProgress = (progress * 4) - idx;
+      applyStep(idx);
+      ssBar.style.width = (idx < 3 ? stepProgress * 100 : 100) + '%';
+    }
+    window.addEventListener('scroll', onScrollStory, { passive: true });
+    onScrollStory();
+  }
+
+  /* ── Stat counter animation ── */
+  function countUp(el, target, suffix, duration) {
+    const start = performance.now();
+    const tick = (now) => {
+      const p = Math.min((now - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(ease * target) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+
+  const statObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      statObs.unobserve(e.target);
+      const el = e.target.querySelector('.stat-num');
+      if (!el) return;
+      const raw = el.textContent.trim();
+      if (raw === '200K+')    { el.textContent = '0K+';  countUp(el, 200, 'K+', 1400); }
+      else if (raw === '94%') { el.textContent = '0%';   countUp(el, 94,  '%',  1200); }
+      else if (raw === '200+') { el.textContent = '0+';  countUp(el, 200, '+',  1200); }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat-item').forEach(el => statObs.observe(el));
 </script>
 </body>
 </html>
