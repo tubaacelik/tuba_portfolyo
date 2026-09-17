@@ -746,6 +746,10 @@ a  { color: inherit; }
 .bundle-card { align-items: flex-start; }
 .bundle-was { font-size: 12px; color: var(--muted-dim); text-decoration: line-through; margin: -16px 0 20px; }
 
+.addon-wrap { margin-top: 48px; padding-top: 40px; border-top: var(--b); text-align: center; }
+.addon-card { max-width: 320px; margin: 20px auto 0; text-align: left; }
+.addon-note { font-size: 12px; color: var(--muted-dim); margin: -16px 0 20px; }
+
 /* ════════════════════════════════════════
    HAKKIMDA
 ════════════════════════════════════════ */
